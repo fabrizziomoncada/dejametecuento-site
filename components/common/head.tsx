@@ -50,7 +50,7 @@ const Head = () => {
           ref={link}
           rel="preload"
           as="style"
-          href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&family=Playfair+Display&display=optional"
+          href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&family=IM+Fell+Double+Pica&display=swap"
           // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
           onLoad={() => (link.current!.rel = 'stylesheet')}
         />
