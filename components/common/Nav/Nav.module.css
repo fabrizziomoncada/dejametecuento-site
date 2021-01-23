@@ -1,0 +1,26 @@
+.root {
+  @apply overflow-x-scroll sticky flex whitespace-nowrap p-4 top-14 z-10 bg-primary transform transition-transform duration-300 translate-y-0 md:justify-center;
+}
+
+.link {
+  @apply uppercase mx-4 pb-2 text-secondary text-xs font-bold;
+}
+
+.link:first-child {
+  margin-left: 0;
+}
+
+.link:last-child::after {
+  content: '';
+  width: 24px;
+  height: 100%;
+  position: absolute;
+}
+
+.active {
+  @apply border-b-2 text-primary;
+}
+
+.hide {
+  @apply -translate-y-full;
+}
