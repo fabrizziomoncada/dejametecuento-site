@@ -1,4 +1,4 @@
-import { ArticleCard } from '..'
+import ArticleCardCarousel from '../ArticleCard/ArticleCardCarousel'
 import { useRef, MouseEvent } from 'react'
 import ArrowLeft from '@components/icons/ArrowLeft'
 import ArrowRight from '@components/icons/ArrowRight'
@@ -45,11 +45,7 @@ const ArticlesCarousel = ({ title, articles }: Props) => {
         className="flex overflow-hidden overflow-x-scroll scroll-snap-x-mandatory scrollbar-none"
       >
         {articles.map((article) => (
-          <ArticleCard
-            article={article}
-            key={article.slug}
-            variant="carousel"
-          />
+          <ArticleCardCarousel article={article} key={article.slug} />
         ))}
       </div>
     </section>

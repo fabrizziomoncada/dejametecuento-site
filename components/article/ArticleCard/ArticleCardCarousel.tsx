@@ -4,22 +4,34 @@ import Link from 'next/link'
 import s from './ArticleCard.module.css'
 import cn from 'classnames'
 import Image from 'next/image'
-// import ActionButtons from '../Article/ActionButtons'
+import ActionButtons from '../Article/ActionButtons'
 
 type Props = {
   article: TArticle
-  variant?: 'cover' | 'carousel'
   route?: string
 }
 
-const ArticleCard = ({ article, variant = 'cover', route }: Props) => {
-  const rootClassName = cn({
-    [s.cover]: variant === 'cover',
-    [s.carousel]: variant === 'carousel',
-  })
-
+const ArticleCardCarousel = ({ article, route }: Props) => {
   return (
-    <article className={rootClassName}>
+    <article className={cn(s.carousel, 'pt-2 mr-12')}>
+      <header>
+        <Link href={`/${article.category.slug}`}>
+          <a className="uppercase text-sm font-bold px-2 py-1 text-accent border rounded-sm">
+            {article.category.title}
+          </a>
+        </Link>
+        <Link href={`/${route || 'articles'}/${article.slug}`}>
+          <h3
+            className={cn(
+              s.title,
+              'serif leading-tight overflow-hidden max-h-28 text-3xl mt-2 mb-6'
+            )}
+          >
+            {article.title}
+          </h3>
+        </Link>
+      </header>
+
       <Link href={`/${route || 'articles'}/${article.slug}`}>
         <figure>
           <Image
@@ -31,35 +43,18 @@ const ArticleCard = ({ article, variant = 'cover', route }: Props) => {
         </figure>
       </Link>
 
-      <section className="pt-8">
-        <Link href={`/${article.category.slug}`}>
-          <a className="uppercase text-sm font-bold px-2 py-1 text-accent border rounded-sm">
-            {article.category.title}
-          </a>
-        </Link>
-        <Link href={`/${route || 'articles'}/${article.slug}`}>
-          <h3
-            className={cn(
-              s.title,
-              'serif leading-tight overflow-hidden max-h-28 mt-3 mb-4'
-            )}
-          >
-            {article.title}
-          </h3>
-        </Link>
+      <section className="pt-6">
         <div className="flex text-s">
           By
           <Link href={`/contributors/${article.author.slug}`}>
             <p className="pl-1 pr-2 font-bold">{article.author.name}</p>
           </Link>
-          {' | '}
-          <Date className="px-2" date={article.published_at as string} />
         </div>
+        <Date className="" date={article.published_at as string} />
+        <ActionButtons article={article} />
       </section>
-
-      {/* <ActionButtons article={article} /> */}
     </article>
   )
 }
 
-export default ArticleCard
+export default ArticleCardCarousel

@@ -6,13 +6,13 @@ export const getFormattedDate = (dateToformat: Date | string | number) => {
 
   if (year < actualYear)
     return date.toLocaleDateString('default', {
-      month: 'long',
+      month: 'short',
       day: 'numeric',
       year: 'numeric',
     })
 
   return date.toLocaleDateString('default', {
-    month: 'long',
+    month: 'short',
     day: 'numeric',
   })
 }
