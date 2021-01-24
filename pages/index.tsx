@@ -16,7 +16,7 @@ function Home({
 }: InferGetStaticPropsType<typeof getStaticProps>) {
   return (
     <Layout navigation={navigation}>
-      <ArticlesCarousel title="Top stories" articles={articles} />
+      <ArticlesCarousel articles={articles} />
       <ArticlesList articles={articles} title="Recent" />
     </Layout>
   )

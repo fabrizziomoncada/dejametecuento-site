@@ -24,7 +24,7 @@ const ArticleCardCarousel = ({ article, route }: Props) => {
           <h3
             className={cn(
               s.title,
-              'serif leading-tight overflow-hidden max-h-28 text-3xl mt-2 mb-6'
+              'serif leading-tight overflow-hidden max-h-28 text-3xl mt-4 mb-6'
             )}
           >
             {article.title}

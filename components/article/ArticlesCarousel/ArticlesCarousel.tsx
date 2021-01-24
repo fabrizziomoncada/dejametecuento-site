@@ -1,32 +1,42 @@
 import ArticleCardCarousel from '../ArticleCard/ArticleCardCarousel'
-import { useRef, MouseEvent } from 'react'
-import ArrowLeft from '@components/icons/ArrowLeft'
-import ArrowRight from '@components/icons/ArrowRight'
-import { Button } from '@components/ui/Button'
+import { useRef } from 'react'
 
 type Props = {
   articles: TArticle[]
-  title: string
 }
 
-const ArticlesCarousel = ({ title, articles }: Props) => {
+const ArticlesCarousel = ({ articles }: Props) => {
   const carouselRef = useRef<HTMLDivElement>(null)
 
-  const scrollToLeft = (e: MouseEvent<HTMLButtonElement>) => {
-    e.preventDefault()
-    carouselRef.current?.scrollBy({ left: -1, top: 0, behavior: 'smooth' })
-  }
+  // const scrollToLeft = (e: MouseEvent<HTMLButtonElement>) => {
+  //   e.preventDefault()
+  //   carouselRef.current?.scrollBy({ left: -1, top: 0, behavior: 'smooth' })
+  // }
 
-  const scrollToRight = (e: MouseEvent<HTMLButtonElement>) => {
-    e.preventDefault()
-    carouselRef.current?.scrollBy({ left: 1, top: 0, behavior: 'smooth' })
-  }
+  // const scrollToRight = (e: MouseEvent<HTMLButtonElement>) => {
+  //   e.preventDefault()
+  //   carouselRef.current?.scrollBy({ left: 1, top: 0, behavior: 'smooth' })
+  // }
 
   return (
-    <section className="mb-12">
-      <div className="flex items-center justify-between h-auto py-4">
-        <p className="uppercase">{title}</p>
-        <ul className="flex">
+    <section className="mt-6 mb-16">
+      <div
+        ref={carouselRef}
+        className="flex overflow-hidden overflow-x-scroll scroll-snap-x-mandatory scrollbar-none"
+      >
+        {articles.map((article) => (
+          <ArticleCardCarousel article={article} key={article.slug} />
+        ))}
+      </div>
+
+      <div className="flex justify-between h-auto mt-12 ">
+        {articles.map((article) => (
+          <div
+            className="w-full mx-1 bg-black pb-1 rounded-sm"
+            key={article.slug}
+          ></div>
+        ))}
+        {/* <ul className="flex">
           <li>
             <Button onClick={scrollToLeft} ariaLabel="Previus article">
               <ArrowLeft />
@@ -37,16 +47,7 @@ const ArticlesCarousel = ({ title, articles }: Props) => {
               <ArrowRight />
             </Button>
           </li>
-        </ul>
-      </div>
-
-      <div
-        ref={carouselRef}
-        className="flex overflow-hidden overflow-x-scroll scroll-snap-x-mandatory scrollbar-none"
-      >
-        {articles.map((article) => (
-          <ArticleCardCarousel article={article} key={article.slug} />
-        ))}
+        </ul> */}
       </div>
     </section>
   )
