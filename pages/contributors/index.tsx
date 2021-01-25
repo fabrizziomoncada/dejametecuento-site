@@ -14,7 +14,7 @@ export async function getStaticProps() {
 export function ContributorsPage({
   contributors,
 }: InferGetStaticPropsType<typeof getStaticProps>) {
-  // Create 2 differents arrays based on the condition
+  // Create 2 differents arrays based on whether or not they're featured
   const [featured, others] = partition<TContributor>(
     contributors,
     (i) => !!i.featured
@@ -24,7 +24,7 @@ export function ContributorsPage({
     <Layout>
       <Hero title="contribuidores" />
       <ul className="mb-4 flex flex-wrap">
-        {[...featured, ...featured].slice(0, 5).map((contributor) => (
+        {featured.map((contributor) => (
           <ContributorFeatured
             contributor={contributor}
             key={contributor.slug}

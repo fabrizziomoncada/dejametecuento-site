@@ -1,3 +1,4 @@
+// Creates 2 arrays based on the condition
 export const partition = <T>(array: T[], cb: (i: T) => boolean): T[][] =>
   array.reduce(
     (acc, item) => {
