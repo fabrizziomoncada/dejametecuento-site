@@ -8,7 +8,7 @@
   }
 
   .select-primary {
-    @apply border border-tertiary py-1 pl-4 pr-10 rounded-lg focus:outline-none focus:border-primary cursor-pointer;
+    @apply py-1 pr-8 pl-16 cursor-pointer;
   }
 
   .markdown {
