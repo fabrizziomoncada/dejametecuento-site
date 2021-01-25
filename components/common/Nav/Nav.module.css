@@ -1,5 +1,5 @@
 .root {
-  @apply overflow-x-scroll sticky flex whitespace-nowrap p-4 top-14 z-10 bg-primary transform transition-transform duration-300 translate-y-0 md:justify-center;
+  @apply overflow-hidden overflow-x-scroll sticky flex whitespace-nowrap px-6 py-4 top-14 z-10 bg-primary transform transition-transform duration-300 translate-y-0 md:justify-center;
 }
 
 .link {

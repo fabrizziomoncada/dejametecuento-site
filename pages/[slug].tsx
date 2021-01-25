@@ -1,5 +1,4 @@
-import { ArticlesList } from '@components/article'
-import { Hero } from '@components/common/Hero'
+import { ArticlesCarousel, ArticlesList } from '@components/article'
 import { GetStaticPropsContext, InferGetStaticPropsType } from 'next'
 import { fetchAPI, getMediaURL, getNavigation } from '@lib/api'
 import { NextSeo } from 'next-seo'
@@ -60,7 +59,7 @@ function CategoryPage({
           }),
         }}
       />
-      <Hero title={category.title} description={category.description} />
+      <ArticlesCarousel articles={articles} />
       <ArticlesList articles={articles} title="Articles" />
     </Layout>
   )
