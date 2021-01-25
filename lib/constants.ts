@@ -5,6 +5,8 @@ export const TwitterURL = 'https://twitter.com'
 export const SITE_URL = 'https://magazine-starter.vercel.app'
 export const SITE_NAME = 'Magazine'
 
+export const CONTACT_EMAIL = 'dejametecuent@gmail.com'
+
 export const SOCIAL_USERNAMES = {
   twitter: 'edgarlr_',
   instagram: 'edgar.lr',

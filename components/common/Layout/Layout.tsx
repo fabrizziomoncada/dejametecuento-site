@@ -1,3 +1,5 @@
+import AboutUsBanner from '../AboutUsBanner'
+import ContributionBanner from '../ContributionBanner'
 import { Footer } from '../Footer'
 import { Header } from '../Header'
 import { Nav } from '../Nav'
@@ -20,9 +22,11 @@ const Layout = ({ children, navigation }: Props) => {
 
       <OfflineBanner />
 
-      {navigation && (
-        <Footer categories={navigation.categories} pages={navigation.pages} />
-      )}
+      <AboutUsBanner />
+
+      <ContributionBanner />
+
+      <Footer />
     </>
   )
 }
