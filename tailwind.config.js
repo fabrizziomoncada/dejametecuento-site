@@ -16,7 +16,7 @@ module.exports = {
         serif: 'var(--font-serif)',
       },
       lineHeight: {
-        article: '1.85',
+        article: '1.675',
       },
       inset: {
         '1/2': '50%',
