@@ -22,16 +22,18 @@ export function ContributorsPage({
 
   return (
     <Layout>
-      <Hero title="Contributors" />
-      <ul>
-        {featured.map((contributor) => (
+      <Hero title="contribuidores" />
+      <ul className="mb-4 flex flex-wrap">
+        {[...featured, ...featured].slice(0, 5).map((contributor) => (
           <ContributorFeatured
             contributor={contributor}
             key={contributor.slug}
           />
         ))}
       </ul>
-      <h6 className="uppercase pt-4">more contributors</h6>
+      <h6 className="pt-6 pb-2 capitalize text-center">
+        Más miembros del equipo
+      </h6>
       <ul>
         {others.map((contributor) => (
           <Contributor contributor={contributor} key={contributor.slug} />

@@ -1,0 +1,38 @@
+.root {
+  @apply py-6 w-6/12 flex flex-col items-center mx-auto border-b border-dashed;
+}
+
+.root:nth-child(2n + 1):nth-last-child(2n-1) {
+  @apply border-l;
+}
+
+.root {
+  flex-basis: 50%;
+}
+
+/* When the number of contributors are even */
+.root:nth-child(odd) {
+  @apply border-r;
+}
+
+/* When the number of contributors are odd */
+.root:nth-child(odd):nth-last-child(odd) {
+  @apply border-r-0 border-l;
+}
+
+/* First child When the numer of contributors are odd */
+.root:first-child:nth-last-child(odd) {
+  flex-basis: 100%;
+  @apply border-b border-l-0 border-r-0;
+}
+
+.root:only-child {
+  flex-basis: 100%;
+  border: 0;
+}
+
+/* Last two childs */
+.root:last-child,
+.root:nth-last-child(2) {
+  @apply border-b-0;
+}
