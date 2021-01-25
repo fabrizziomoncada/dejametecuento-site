@@ -85,8 +85,8 @@ function ArticlePage({
           }),
         }}
       />
-      <Link href={'/'}>
-        <a aria-label="Go back">
+      <Link href="/">
+        <a className="mt-4" aria-label="Go back">
           <ArrowLeft />
         </a>
       </Link>

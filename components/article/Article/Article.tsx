@@ -11,7 +11,7 @@ function Article({ article }: { article: TArticle | undefined }) {
 
   return (
     <article>
-      <header className="py-10">
+      <header className="py-8">
         <Link href={`/${article.category.slug}`}>
           <a className="uppercase text-sm font-bold px-2 py-1 text-accent border rounded-sm">
             {article.category.title}
