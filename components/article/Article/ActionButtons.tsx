@@ -1,9 +1,15 @@
 import AddToListButton from './AddToListButton'
 import ShareButton from '@components/common/ShareButton'
+import cn from 'classnames'
 
-const ActionButtons = ({ article }: { article: TArticle }) => {
+type Props = {
+  article: TArticle
+  className?: string
+}
+
+const ActionButtons = ({ article, className = '' }: Props) => {
   return (
-    <ul className="flex justify-end">
+    <ul className={cn('flex justify-end', className)}>
       <li>
         <AddToListButton article={article} />
       </li>
