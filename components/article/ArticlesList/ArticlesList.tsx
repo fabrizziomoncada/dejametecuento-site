@@ -9,7 +9,7 @@ type Props = {
 const ArticlesList = ({ articles, title, variant = 'default' }: Props) => {
   return (
     <section className="mb-4">
-      <div className="py-8 uppercase text-center font-bold">{title}</div>
+      <div className="py-8 capitalize text-center font-bold">{title}</div>
 
       {articles.map((article) => (
         <ArticleCard article={article} variant={variant} key={article.slug} />

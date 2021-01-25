@@ -58,9 +58,9 @@ function ContributorPage({
 
   return (
     <Layout>
-      <section className="text-center py-4">
+      <section className="text-center py-10 border-b">
         {isFeatured && (
-          <figure className="relative w-24 h-24 mx-auto my-2">
+          <figure className="relative w-28 h-28 mx-auto mb-4">
             <Image
               src={thumbnailUrl}
               className="rounded-full"
@@ -69,23 +69,29 @@ function ContributorPage({
             />
           </figure>
         )}
-        <h3 className="serif">{contributor?.name}</h3>
-        <p className="text-xs uppercase text-secondary">{contributor?.role}</p>
+        <h3 className="serif text-3xl">{contributor?.name}</h3>
+        <p className="capitalize text-secondary">{contributor?.role}</p>
+
+        <p className="text-secondary capitalize">
+          {articles?.length}{' '}
+          {articles?.length === 1 ? 'Contribución' : 'Contribuciones'}
+        </p>
         {contributor?.urls?.twitter && (
           <ExternalLink
             to={`https://twitter.com/${contributor?.urls.twitter}`}
             ariaLabel="Contributor's twitter"
+            className="text-indigo-500"
           >
             @{contributor?.urls.twitter}
           </ExternalLink>
         )}
         {isFeatured && (
-          <p className="text-center py-2 leading-tight">
+          <p className="text-left border-t border-dashed my-10 py-10 leading-tight">
             {contributor?.featured?.description}
           </p>
         )}
       </section>
-      <ArticlesList articles={articles || []} title="all contributons" />
+      <ArticlesList articles={articles || []} title="Contribuciones" />
     </Layout>
   )
 }
