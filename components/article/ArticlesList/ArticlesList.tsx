@@ -3,15 +3,16 @@ import { ArticleCard } from '..'
 type Props = {
   articles: TArticle[]
   title: string
+  variant?: 'default' | 'compact'
 }
 
-const ArticlesList = ({ articles, title }: Props) => {
+const ArticlesList = ({ articles, title, variant = 'default' }: Props) => {
   return (
-    <section>
-      <div className="py-2 uppercase">{title}</div>
+    <section className="mb-4">
+      <div className="py-8 uppercase text-center font-bold">{title}</div>
 
       {articles.map((article) => (
-        <ArticleCard article={article} key={article.slug} />
+        <ArticleCard article={article} variant={variant} key={article.slug} />
       ))}
     </section>
   )

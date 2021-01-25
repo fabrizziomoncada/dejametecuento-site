@@ -8,14 +8,14 @@ import Image from 'next/image'
 
 type Props = {
   article: TArticle
-  variant?: 'cover' | 'carousel'
+  variant?: 'default' | 'compact'
   route?: string
 }
 
-const ArticleCard = ({ article, variant = 'cover', route }: Props) => {
+const ArticleCard = ({ article, variant = 'default', route }: Props) => {
   const rootClassName = cn({
-    [s.cover]: variant === 'cover',
-    [s.carousel]: variant === 'carousel',
+    [s.default]: variant === 'default',
+    [s.compact]: variant === 'compact',
   })
 
   return (

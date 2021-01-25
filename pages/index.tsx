@@ -17,7 +17,12 @@ function Home({
   return (
     <Layout navigation={navigation}>
       <ArticlesCarousel articles={articles} />
-      <ArticlesList articles={articles} title="Recent" />
+      <ArticlesList articles={articles} title="Entradas Recientes" />
+      <ArticlesList
+        articles={articles}
+        title="Continúa Leyendo"
+        variant="compact"
+      />
     </Layout>
   )
 }
