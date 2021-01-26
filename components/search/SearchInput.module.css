@@ -3,13 +3,17 @@
 }
 
 .filter {
-  @apply text-secondary py-2 hover:opacity-40;
+  @apply font-bold text-secondary py-2 hover:opacity-40 px-2;
+}
+
+.filter:last-child {
+  @apply mb-8;
 }
 
 .filterActive {
-  @apply font-bold text-primary;
+  @apply bg-indigo-200 rounded-sm text-indigo-600;
 }
 
 .filterHeading {
-  @apply mt-6 text-secondary text-xs;
+  @apply mb-4 text-secondary text-xs;
 }

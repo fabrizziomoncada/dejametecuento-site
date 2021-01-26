@@ -6,16 +6,20 @@ import Filters from '@components/icons/Filters'
 import Link from 'next/link'
 import { filterQueries } from '@lib/search'
 import { Button } from '@components/ui/Button'
+import { useIsMobile } from '@lib/hooks/use-media-queries'
+import MobileModal from '@components/ui/MobileModal/MobilModal'
 
 const SearchInput = ({ categories }: { categories: TCategory[] }) => {
   const [showFilters, setShowFilters] = useState(false)
+
+  const isMobile = useIsMobile()
 
   const router = useRouter()
   const { q, category, sort } = router.query
 
   const SearchFilters = () => {
     return (
-      <div className="absolute z-20 bg-primary left-0 right-0 px-2 pt-2 pb-6 border-b border-secondary">
+      <>
         <p className={s.filterHeading}>SORT BY</p>
         <ul>
           <Link
@@ -81,6 +85,21 @@ const SearchInput = ({ categories }: { categories: TCategory[] }) => {
             </Link>
           ))}
         </ul>
+      </>
+    )
+  }
+
+  const SearchMenu = () => {
+    if (isMobile) {
+      return (
+        <MobileModal onClick={() => setShowFilters(!showFilters)}>
+          <SearchFilters />
+        </MobileModal>
+      )
+    }
+    return (
+      <div className="absolute z-20 bg-primary left-0 right-0 px-2 pt-2 pb-6 border-b border-secondary">
+        <SearchFilters />
       </div>
     )
   }
@@ -122,7 +141,7 @@ const SearchInput = ({ categories }: { categories: TCategory[] }) => {
           <Filters />
         </Button>
       </label>
-      {showFilters && <SearchFilters />}
+      {showFilters && <SearchMenu />}
     </div>
   )
 }

@@ -45,7 +45,7 @@ function SearchPage({
 
   return (
     <>
-      <header className="fixed top-0 right-0 left-0 z-30 h-16 bg-white">
+      <header className="fixed top-0 right-0 left-0 z-20 h-16 bg-white">
         <Link href="/">
           <a className="block w-max serif my-6 mx-auto text-xl">
             Déjame te Cuento

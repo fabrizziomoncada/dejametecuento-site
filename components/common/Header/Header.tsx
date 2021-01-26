@@ -6,7 +6,7 @@ import { Button } from '@components/ui/Button'
 import SearchInput from './SearchInput'
 
 const Header = () => {
-  const [showSearch, setShowSearch] = useState(true)
+  const [showSearch, setShowSearch] = useState(false)
 
   const handleOnClose = () => {
     setShowSearch(false)
