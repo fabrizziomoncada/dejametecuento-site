@@ -43,7 +43,12 @@ const ListsPage = () => {
               <h6 className="uppercase">{list.length} Articles</h6>
             </div>
             {list.map((article) => (
-              <ArticleCard article={article} key={article.slug} route="lists" />
+              <ArticleCard
+                article={article}
+                key={article.slug}
+                route="lists"
+                actions
+              />
             ))}
           </section>
         ) : (

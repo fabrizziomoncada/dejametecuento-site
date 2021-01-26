@@ -4,15 +4,21 @@ import Link from 'next/link'
 import s from './ArticleCard.module.css'
 import cn from 'classnames'
 import Image from 'next/image'
-// import ActionButtons from '../Article/ActionButtons'
+import ActionButtons from '../Article/ActionButtons'
 
 type Props = {
   article: TArticle
   variant?: 'default' | 'compact'
   route?: string
+  actions?: boolean
 }
 
-const ArticleCard = ({ article, variant = 'default', route }: Props) => {
+const ArticleCard = ({
+  article,
+  variant = 'default',
+  route,
+  actions = false,
+}: Props) => {
   const rootClassName = cn({
     [s.default]: variant === 'default',
     [s.compact]: variant === 'compact',
@@ -57,7 +63,7 @@ const ArticleCard = ({ article, variant = 'default', route }: Props) => {
         </div>
       </section>
 
-      {/* <ActionButtons article={article} /> */}
+      {actions && <ActionButtons article={article} />}
     </article>
   )
 }
