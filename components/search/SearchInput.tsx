@@ -2,7 +2,6 @@ import { useRouter } from 'next/router'
 import cn from 'classnames'
 import { useState } from 'react'
 import s from './SearchInput.module.css'
-import Close from '@components/icons/Close'
 import Filters from '@components/icons/Filters'
 import Link from 'next/link'
 import { filterQueries } from '@lib/search'
@@ -87,10 +86,10 @@ const SearchInput = ({ categories }: { categories: TCategory[] }) => {
   }
 
   return (
-    <div className="sticky bg-primary top-0 py-4 z-20 mb-6 ">
+    <div className="sticky bg-primary top-14 mt-12 py-4 z-20">
       <label
         htmlFor="search"
-        className="flex border border-secondary w-full py-2 px-1 rounded-xl focus-within:border-primary"
+        className="flex border-b border-secondary w-full py-2 px-1 focus-within:border-primary"
       >
         <input
           type="search"
@@ -99,7 +98,7 @@ const SearchInput = ({ categories }: { categories: TCategory[] }) => {
           id="search"
           defaultValue={router.query.q}
           placeholder="Buscar..."
-          className="bg-transparent outline-none w-full pr-2 pl-4 search-btn-none"
+          className="bg-transparent outline-none w-full px-2 search-btn-none"
           onKeyUp={(e) => {
             e.preventDefault()
             if (e.key === 'Enter') {
@@ -121,10 +120,6 @@ const SearchInput = ({ categories }: { categories: TCategory[] }) => {
           onClick={() => setShowFilters(!showFilters)}
         >
           <Filters />
-        </Button>
-
-        <Button className={s.searchButton} onClick={() => router.push('/')}>
-          <Close />
         </Button>
       </label>
       {showFilters && <SearchFilters />}
