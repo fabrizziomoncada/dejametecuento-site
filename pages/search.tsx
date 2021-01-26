@@ -71,9 +71,13 @@ function SearchPage({
             }`}
           />
         ) : (
-          <p className="text-center my-auto text-secondary">
-            We couldn&apos;t find anything
-          </p>
+          <div className="flex flex-col items-center mt-1/5 text-secondary">
+            <div className="w-2/3 pb-1/3 mb-2 rounded-sm bg-indigo-400" />
+            <div className="w-2/4 pb-4 mb-2 rounded-sm bg-indigo-200" />
+            <div className="w-2/5 pb-4 mb-6 rounded-sm bg-indigo-100" />
+            <p className="font-bold">No hay resultados</p>
+            <span className="text-xs">Reitenta modificando tu búsqueda</span>
+          </div>
         )}
       </main>
     </>
