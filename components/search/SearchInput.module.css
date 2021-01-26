@@ -15,5 +15,5 @@
 }
 
 .filterHeading {
-  @apply mb-4 text-secondary text-xs;
+  @apply mb-4 text-secondary uppercase text-xs;
 }

@@ -20,7 +20,7 @@ const SearchInput = ({ categories }: { categories: TCategory[] }) => {
   const SearchFilters = () => {
     return (
       <>
-        <p className={s.filterHeading}>SORT BY</p>
+        <p className={s.filterHeading}>Ordernar Por</p>
         <ul>
           <Link
             href={{
@@ -33,7 +33,7 @@ const SearchInput = ({ categories }: { categories: TCategory[] }) => {
                 [s.filterActive]: !sort || sort === 'asc',
               })}
             >
-              Newest
+              Más reciente
             </li>
           </Link>
           <Link
@@ -47,11 +47,11 @@ const SearchInput = ({ categories }: { categories: TCategory[] }) => {
                 [s.filterActive]: sort === 'desc',
               })}
             >
-              Oldest
+              Más Antiguo
             </li>
           </Link>
         </ul>
-        <p className={s.filterHeading}>FILTER BY</p>
+        <p className={s.filterHeading}>Filtrar por</p>
         <ul>
           <Link
             href={{
@@ -64,7 +64,7 @@ const SearchInput = ({ categories }: { categories: TCategory[] }) => {
                 [s.filterActive]: !category,
               })}
             >
-              All Categories
+              Todas las entradas
             </li>
           </Link>
           {categories.map((c) => (
