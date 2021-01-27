@@ -1,0 +1,15 @@
+.root li {
+  @apply font-bold text-secondary py-2 hover:opacity-40 px-2;
+}
+
+.root p {
+  @apply mb-4 text-secondary uppercase text-xs;
+}
+
+.root li.active {
+  @apply bg-indigo-200 rounded-sm text-indigo-600;
+}
+
+.root li:last-child {
+  @apply mb-8;
+}

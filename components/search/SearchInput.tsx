@@ -6,21 +6,18 @@ import Filters from '@components/icons/Filters'
 import Link from 'next/link'
 import { filterQueries } from '@lib/search'
 import { Button } from '@components/ui/Button'
-import { useIsMobile } from '@lib/hooks/use-media-queries'
-import MobileModal from '@components/ui/MobileModal/MobilModal'
+import { OptionsMenu } from '@components/ui/OptionsMenu'
 
 const SearchInput = ({ categories }: { categories: TCategory[] }) => {
   const [showFilters, setShowFilters] = useState(false)
-
-  const isMobile = useIsMobile()
 
   const router = useRouter()
   const { q, category, sort } = router.query
 
   const SearchFilters = () => {
     return (
-      <>
-        <p className={s.filterHeading}>Ordernar Por</p>
+      <OptionsMenu handleOnClose={() => setShowFilters(false)}>
+        <p>Ordernar Por</p>
         <ul>
           <Link
             href={{
@@ -29,8 +26,8 @@ const SearchInput = ({ categories }: { categories: TCategory[] }) => {
             }}
           >
             <li
-              className={cn(s.filter, {
-                [s.filterActive]: !sort || sort === 'asc',
+              className={cn({
+                ['active']: !sort || sort === 'asc',
               })}
             >
               Más reciente
@@ -43,15 +40,15 @@ const SearchInput = ({ categories }: { categories: TCategory[] }) => {
             }}
           >
             <li
-              className={cn(s.filter, {
-                [s.filterActive]: sort === 'desc',
+              className={cn({
+                ['active']: sort === 'desc',
               })}
             >
               Más Antiguo
             </li>
           </Link>
         </ul>
-        <p className={s.filterHeading}>Filtrar por</p>
+        <p>Filtrar por</p>
         <ul>
           <Link
             href={{
@@ -60,8 +57,8 @@ const SearchInput = ({ categories }: { categories: TCategory[] }) => {
             }}
           >
             <li
-              className={cn(s.filter, {
-                [s.filterActive]: !category,
+              className={cn({
+                ['active']: !category,
               })}
             >
               Todas las entradas
@@ -76,8 +73,8 @@ const SearchInput = ({ categories }: { categories: TCategory[] }) => {
               key={c.slug}
             >
               <li
-                className={cn(s.filter, {
-                  [s.filterActive]: category === c.slug,
+                className={cn({
+                  ['active']: category === c.slug,
                 })}
               >
                 {c.title}
@@ -85,22 +82,7 @@ const SearchInput = ({ categories }: { categories: TCategory[] }) => {
             </Link>
           ))}
         </ul>
-      </>
-    )
-  }
-
-  const SearchMenu = () => {
-    if (isMobile) {
-      return (
-        <MobileModal onClick={() => setShowFilters(!showFilters)}>
-          <SearchFilters />
-        </MobileModal>
-      )
-    }
-    return (
-      <div className="absolute z-20 bg-primary left-0 right-0 px-2 pt-2 pb-6 border-b border-secondary">
-        <SearchFilters />
-      </div>
+      </OptionsMenu>
     )
   }
 
@@ -141,7 +123,7 @@ const SearchInput = ({ categories }: { categories: TCategory[] }) => {
           <Filters />
         </Button>
       </label>
-      {showFilters && <SearchMenu />}
+      {showFilters && <SearchFilters />}
     </div>
   )
 }
