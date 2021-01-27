@@ -1,14 +1,12 @@
-import { fetchAPI, getMediaURL, getNavigation } from '@lib/api'
+import { fetchAPI, getMediaURL } from '@lib/api'
 import { GetStaticPropsContext, InferGetStaticPropsType } from 'next'
 import { useRouter } from 'next/router'
 import ErrorPage from 'next/error'
-import Link from 'next/link'
-
 import { Article } from '@components/article'
 import { NextSeo } from 'next-seo'
 import ExitPreviewButton from '@components/common/ExitPreviewButton'
 import { Layout } from '@components/common/Layout'
-import ArrowLeft from '@components/icons/ArrowLeft'
+import ArticleSubheader from '@components/common/Subheader/ArticleSubheader'
 
 export async function getStaticPaths() {
   // If you don't have too many articles you can uncomment this code and pre-build each page instead
@@ -36,16 +34,13 @@ export async function getStaticProps({
     )
   )[0]
 
-  const navigation: TNavigation = await getNavigation()
-
   // No props will trigger a 404
   if (!article) return { props: {} }
-  return { props: { preview, navigation, article } }
+  return { props: { preview, article } }
 }
 
 function ArticlePage({
   article,
-  navigation,
   preview,
 }: InferGetStaticPropsType<typeof getStaticProps>) {
   const { isFallback } = useRouter()
@@ -55,7 +50,7 @@ function ArticlePage({
   }
 
   return (
-    <Layout navigation={navigation}>
+    <>
       <NextSeo
         title={article?.title}
         description={article?.description}
@@ -85,14 +80,11 @@ function ArticlePage({
           }),
         }}
       />
-      <Link href="/">
-        <a className="mt-4" aria-label="Go back">
-          <ArrowLeft />
-        </a>
-      </Link>
-      <Article article={article} />
-      {preview && <ExitPreviewButton />}
-    </Layout>
+      <Layout subheader={<ArticleSubheader title={article!.title} />}>
+        <Article article={article} />
+        {preview && <ExitPreviewButton />}
+      </Layout>
+    </>
   )
 }
 

@@ -1,10 +1,10 @@
 import Contributor from '@components/contributor/Contributor'
 import ContributorFeatured from '@components/contributor/ContributorFeatured'
 import { Layout } from '@components/common/Layout'
-import Hero from '@components/common/Hero/Hero'
 import { fetchAPI } from '@lib/api'
 import { partition } from '@lib/partition'
 import { InferGetStaticPropsType } from 'next'
+import { Subheader } from '@components/common/Subheader'
 
 export async function getStaticProps() {
   const contributors: TContributor[] = await fetchAPI('/contributors')
@@ -21,8 +21,7 @@ export function ContributorsPage({
   )
 
   return (
-    <Layout>
-      <Hero title="contribuidores" />
+    <Layout subheader={<Subheader title="Contribuidores" />}>
       <ul className="mb-4 flex flex-wrap">
         {featured.map((contributor) => (
           <ContributorFeatured

@@ -1,12 +1,10 @@
 import { useState, useEffect } from 'react'
 import { useRouter } from 'next/router'
 import ErrorPage from 'next/error'
-import Link from 'next/link'
 import { get } from 'idb-keyval'
-
 import { Article } from '@components/article'
 import { Layout } from '@components/common/Layout'
-import ArrowLeft from '@components/icons/ArrowLeft'
+import ArticleSubheader from '@components/common/Subheader/ArticleSubheader'
 
 function ArticlePage() {
   const [article, setArticle] = useState<TArticle | 'loading' | null>('loading')
@@ -33,12 +31,7 @@ function ArticlePage() {
   }
 
   return (
-    <Layout>
-      <Link href={'/lists'}>
-        <a aria-label="Go back">
-          <ArrowLeft />
-        </a>
-      </Link>
+    <Layout subheader={<ArticleSubheader title={article.title} />}>
       <Article article={article as TArticle} />
     </Layout>
   )
