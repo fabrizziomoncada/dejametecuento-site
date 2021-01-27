@@ -6,6 +6,7 @@ import ErrorPage from 'next/error'
 import ExternalLink from '@components/ui/Link/ExternalLink'
 import Image from 'next/image'
 import { Layout } from '@components/common/Layout'
+import { Subheader } from '@components/common/Subheader'
 
 export async function getStaticPaths() {
   // If you don't have too many contributors you can uncomment
@@ -57,7 +58,7 @@ function ContributorPage({
   )
 
   return (
-    <Layout>
+    <Layout subheader={<Subheader title="Contribuidores" />}>
       <section className="text-center py-10 border-b">
         {isFeatured && (
           <figure className="relative w-28 h-28 mx-auto mb-4">
