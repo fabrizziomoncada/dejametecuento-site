@@ -1,7 +1,9 @@
 import { useState, useEffect } from 'react'
 import { useTheme } from 'next-themes'
 import ChevronDown from '@components/icons/ChevronDown'
-import Facebook from '@components/icons/Facebook'
+import Moon from '@components/icons/Moon'
+import Sun from '@components/icons/Sun'
+import Laptop from '@components/icons/Laptop'
 
 const ThemeSwitch = () => {
   const [mounted, setMounted] = useState(false)
@@ -15,7 +17,7 @@ const ThemeSwitch = () => {
   return (
     <label htmlFor="theme" className="relative w-max mx-auto my-2 leading-8">
       <span className="absolute left-0 top-2 px-3 border-r pointer-events-none">
-        <Facebook />
+        {theme === 'dark' ? <Moon /> : theme === 'light' ? <Sun /> : <Laptop />}
       </span>
       {/* eslint-disable-next-line jsx-a11y/no-onchange */}
       <select
