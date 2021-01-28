@@ -99,7 +99,7 @@ const SearchInput = ({ categories }: { categories: TCategory[] }) => {
           id="search"
           defaultValue={router.query.q}
           placeholder="Buscar..."
-          className="bg-transparent outline-none w-full px-2 search-btn-none"
+          className="bg-transparent outline-none w-full px-2 search-btn"
           onKeyUp={(e) => {
             e.preventDefault()
             if (e.key === 'Enter') {
@@ -115,7 +115,6 @@ const SearchInput = ({ categories }: { categories: TCategory[] }) => {
             }
           }}
         />
-
         <Button
           className={s.searchButton}
           onClick={() => setShowFilters(!showFilters)}

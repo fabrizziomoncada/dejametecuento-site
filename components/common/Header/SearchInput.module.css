@@ -2,10 +2,6 @@
   @apply flex flex-col justify-start items-center fixed bg-primary top-0 left-0 right-0 bottom-0 pt-8 px-4;
 }
 
-.closeButton {
-  @apply absolute top-6 right-4;
-}
-
 .searchClear {
   @apply px-1 opacity-50 hover:opacity-100;
 }

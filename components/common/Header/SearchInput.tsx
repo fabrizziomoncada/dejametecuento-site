@@ -10,17 +10,19 @@ const SearchInput = ({ handleOnClose }: { handleOnClose: () => void }) => {
   const searchInput = useRef<HTMLInputElement>(null)
   return (
     <div className={s.root}>
-      <div className="mb-8">
-        <p className="block w-max serif mx-auto text-xl">Déjame te Cuento</p>
+      <div className="w-full flex items-center z-20 h-16 bg-white mb-4">
+        <p className="serif text-xl absolute left-1/2 transform -translate-x-1/2">
+          Déjame te Cuento
+        </p>
         <Button
           onClick={handleOnClose}
           ariaLabel="Close search"
-          className={s.closeButton}
+          className="ml-auto"
         >
           <Close />
         </Button>
       </div>
-      <label className="flex items-center border-b border-secondary w-full py-2 px-3  focus-within:border-primary">
+      <label className="flex items-center border-b border-secondary w-full py-2 px-3 focus-within:border-primary">
         <input
           type="search"
           ref={searchInput}
@@ -28,7 +30,7 @@ const SearchInput = ({ handleOnClose }: { handleOnClose: () => void }) => {
           name="search"
           id="search"
           placeholder="Buscar articulos"
-          className="bg-transparent outline-none w-full p-2 search-btn-none"
+          className="bg-transparent outline-none w-full p-2 search-btn"
           onKeyUp={(e) => {
             e.preventDefault()
             if (e.key === 'Enter') {
@@ -45,7 +47,7 @@ const SearchInput = ({ handleOnClose }: { handleOnClose: () => void }) => {
           }}
         />
         <Button
-          className="absolute right-6 bg-indigo-600 text-white"
+          className="bg-indigo-600 text-white"
           onClick={(e) => {
             e.preventDefault()
             const q = searchInput.current?.value
