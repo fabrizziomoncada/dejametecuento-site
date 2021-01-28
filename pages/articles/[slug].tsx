@@ -2,7 +2,7 @@ import { fetchAPI, getMediaURL } from '@lib/api'
 import { GetStaticPropsContext, InferGetStaticPropsType } from 'next'
 import { useRouter } from 'next/router'
 import ErrorPage from 'next/error'
-import { Article } from '@components/article'
+import { Article, ArticlesList } from '@components/article'
 import { NextSeo } from 'next-seo'
 import ExitPreviewButton from '@components/common/ExitPreviewButton'
 import { Layout } from '@components/common/Layout'
@@ -34,13 +34,17 @@ export async function getStaticProps({
     )
   )[0]
 
+  // Only the recent's 5
+  const recentArticles: TArticle[] = await fetchAPI('/articles?_limit=5')
+
   // No props will trigger a 404
   if (!article) return { props: {} }
-  return { props: { preview, article } }
+  return { props: { preview, article, recentArticles } }
 }
 
 function ArticlePage({
   article,
+  recentArticles,
   preview,
 }: InferGetStaticPropsType<typeof getStaticProps>) {
   const { isFallback } = useRouter()
@@ -82,6 +86,7 @@ function ArticlePage({
       />
       <Layout subheader={<ArticleSubheader article={article!} />}>
         <Article article={article} />
+        <ArticlesList articles={recentArticles!} title="Continúa Leyendo" />
         {preview && <ExitPreviewButton />}
       </Layout>
     </>
