@@ -4,7 +4,7 @@
   }
 
   .input-primary {
-    @apply border border-tertiary py-2 px-3 rounded-xl focus:outline-none focus:border-primary;
+    @apply border py-2 px-3 rounded-xl focus:outline-none focus:border-primary;
   }
 
   .select-primary {
@@ -39,7 +39,7 @@
     }
 
     & hr {
-      @apply border-none border border-t border-secondary;
+      @apply border-none border border-t;
     }
     & figcaption {
       @apply block text-center text-sm border-primary mt-4 mb-8 text-secondary;
@@ -83,7 +83,7 @@
 
     /* Code Snippets */
     & *:not(pre) > code {
-      @apply text-base p-1 bg-primary-2 rounded-sm;
+      @apply text-base p-1 bg-primary-05 rounded-sm;
     }
 
     & *:not(pre) > code::before,
@@ -92,7 +92,7 @@
     }
 
     & pre {
-      @apply overflow-x-auto bg-primary-2 leading-6 py-6 px-5 rounded text-base;
+      @apply overflow-x-auto bg-primary-05 leading-6 py-6 px-5 rounded text-base;
     }
 
     /* Unordered List */

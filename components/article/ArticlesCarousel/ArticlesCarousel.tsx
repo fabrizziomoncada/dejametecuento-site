@@ -32,7 +32,7 @@ const ArticlesCarousel = ({ articles }: Props) => {
       <div className="flex justify-between h-auto mt-12 ">
         {articles.map((article) => (
           <div
-            className="w-full mx-1 bg-black pb-1 rounded-sm"
+            className="w-full mx-1 bg-primary pb-1 rounded-sm"
             key={article.slug}
           ></div>
         ))}

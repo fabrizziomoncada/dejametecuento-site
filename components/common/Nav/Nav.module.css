@@ -1,5 +1,5 @@
 .root {
-  @apply overflow-hidden overflow-x-scroll sticky flex whitespace-nowrap px-6 py-4 top-14 z-10 bg-primary transform transition-transform duration-300 translate-y-0 md:justify-center;
+  @apply overflow-hidden overflow-x-scroll sticky flex whitespace-nowrap px-6 py-4 top-14 z-10 bg-secondary transform transition-transform duration-300 translate-y-0 md:justify-center;
 }
 
 .link {
@@ -24,12 +24,12 @@
 }
 
 .listView {
-  @apply sticky flex flex-col px-6 pt-6 pb-8 top-14 z-50 bg-primary border-b border-secondary;
+  @apply sticky flex flex-col px-6 pt-6 pb-8 top-14 z-50 bg-secondary border-b;
 }
 
 .listView::after {
   content: '';
-  @apply bg-black bg-opacity-30 absolute right-0 bottom-0 left-0 h-screen block transform translate-y-full;
+  @apply bg-primary bg-opacity-30 absolute right-0 bottom-0 left-0 h-screen block transform translate-y-full;
 }
 
 .listView .link {
@@ -37,7 +37,7 @@
 }
 
 .listView .active {
-  @apply bg-indigo-200 rounded-sm text-indigo-600 border-none;
+  @apply bg-blue rounded-sm text-accent border-none;
 }
 
 .listView p {
@@ -45,14 +45,14 @@
 }
 
 .button {
-  @apply sticky -right-2 bg-white z-10 hover:opacity-100 -my-2;
+  @apply sticky -right-2 bg-secondary z-10 hover:opacity-100 -my-2;
 }
 
 .button::after {
   content: '';
-  @apply absolute right-0 top-0 bottom-0 w-4 bg-white transform translate-x-full;
+  @apply absolute right-0 top-0 bottom-0 w-4 bg-secondary transform translate-x-full;
 }
 
 .expandedButton {
-  @apply bg-white mx-auto;
+  @apply bg-secondary mx-auto;
 }

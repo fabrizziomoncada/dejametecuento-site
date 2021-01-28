@@ -3,5 +3,5 @@
 }
 
 .filterActive {
-  @apply bg-indigo-200 rounded-sm text-indigo-600;
+  @apply bg-blue rounded-sm text-accent;
 }

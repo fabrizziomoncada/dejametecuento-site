@@ -23,7 +23,7 @@ const OptionsMenu = ({ children, handleOnClose }: Props) => {
     <div
       className={cn(
         s.root,
-        'absolute z-20 bg-primary left-0 right-0 px-2 pt-2 pb-6 border-b border-secondary'
+        'absolute z-20 bg-secondary left-0 right-0 px-2 pt-2 pb-6 border-b'
       )}
     >
       {children}

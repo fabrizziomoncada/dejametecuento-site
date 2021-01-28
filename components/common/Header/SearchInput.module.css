@@ -1,5 +1,5 @@
 .root {
-  @apply flex flex-col justify-start items-center fixed bg-primary top-0 left-0 right-0 bottom-0 pt-8 px-4;
+  @apply flex flex-col justify-start items-center fixed bg-secondary top-0 left-0 right-0 bottom-0 pt-8 px-4;
 }
 
 .searchClear {

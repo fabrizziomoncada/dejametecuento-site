@@ -81,7 +81,7 @@ function ContributorPage({
           <ExternalLink
             to={`https://twitter.com/${contributor?.urls.twitter}`}
             ariaLabel="Contributor's twitter"
-            className="text-indigo-500"
+            className="text-accent"
           >
             @{contributor?.urls.twitter}
           </ExternalLink>

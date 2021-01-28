@@ -87,10 +87,10 @@ const SearchInput = ({ categories }: { categories: TCategory[] }) => {
   }
 
   return (
-    <div className="sticky bg-primary top-14 mt-12 py-4 z-20">
+    <div className="sticky bg-secondary top-14 mt-12 py-4 z-20">
       <label
         htmlFor="search"
-        className="flex border-b border-secondary w-full py-2 px-1 focus-within:border-primary"
+        className="flex border-b w-full py-2 px-1 focus-within:border-primary"
       >
         <input
           type="search"

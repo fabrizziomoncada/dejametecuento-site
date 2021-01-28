@@ -5,48 +5,61 @@
   --font-serif: 'IM Fell Double Pica', serif;
 
   /* Theme Colors */
-  --light: #ffffff;
-  --light-2: #f1f3f5;
-  --dark: #111;
-  --dark-2: #1f2023;
-
-  /* Accent Colors */
+  --white: #ffffff;
+  --gray-05: #f3f3f3;
+  --gray-10: #e7e7e7;
+  --gray-20: #d0d0d0;
+  --gray-40: #a0a0a0;
+  --gray-60: #717171;
+  --gray-80: #414141;
+  --gray-90: #2a2a2a;
+  --gray-95: #1e1e1e;
+  --black: #121212;
   --blue: #0d6cf2;
+  --blue-10: rgba(13, 108, 242, 0.1);
+  --blue-light: #9ec4fa;
 
   /* Text Colors */
-  --text-primary: rgba(0, 0, 0, 1);
-  --text-secondary: #505050;
+  --text-primary: var(--gray-95);
+  --text-secondary: var(--gray-60);
+  --text-tertiary: var(--gray-40);
   --text-accent: var(--blue);
 
-  /* Main Colors */
-  --primary: var(--light);
-  --primary-2: var(--light-2);
-  --secondary: var(--dark);
-  --secondary-2: var(--dark-2);
+  /* Element Colors */
+  --primary: var(--black);
+  --primary-95: var(--gray-95);
+  --primary-90: var(--gray-90);
+  --primary-80: var(--gray-80);
+  --primary-60: var(--gray-60);
+  --primary-40: var(--gray-40);
+  --primary-20: var(--gray-20);
+  --primary-10: var(--gray-10);
+  --primary-05: var(--gray-05);
+  --secondary: var(--white);
+  --accent: var(--blue);
 
-  --selection: var(--cyan);
-
-  /* Hover Colors */
-  --hover: rgba(0, 0, 0, 0.075);
-  --hover-1: rgba(0, 0, 0, 0.15);
-  --hover-2: rgba(0, 0, 0, 0.25);
+  --selection: var(--blue-light);
 }
 
 [data-theme='dark'] {
-  --text-primary: rgba(255, 255, 255, 1);
-  --text-secondary: rgba(255, 255, 255, 0.5);
-  --text-accent: var(--cyan);
+  /* Text Colors */
+  --text-primary: var(--white);
+  --text-secondary: var(--gray-20);
+  --text-tertiary: var(--gray-40);
+  --text-accent: var(--blue-light);
 
-  --primary: var(--dark);
-  --primary-2: var(--dark-2);
-  --secondary: var(--light-2);
-  --secondary-2: var(--light);
-
-  --selection: var(--purple);
-
-  --hover: rgba(255, 255, 255, 0.075);
-  --hover-1: rgba(255, 255, 255, 0.15);
-  --hover-2: rgba(255, 255, 255, 0.25);
+  /* Element Colors */
+  --primary: var(--white);
+  --primary-95: var(--gray-05);
+  --primary-90: var(--gray-10);
+  --primary-80: var(--gray-20);
+  --primary-60: var(--gray-40);
+  --primary-40: var(--gray-60);
+  --primary-20: var(--gray-80);
+  --primary-10: var(--gray-90);
+  --primary-05: var(--gray-95);
+  --secondary: var(--black);
+  --accent: var(--blue-light);
 }
 
 *,
@@ -71,7 +84,7 @@ body {
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: var(--primary);
+  background-color: var(--secondary);
   color: var(--text-primary);
 }
 

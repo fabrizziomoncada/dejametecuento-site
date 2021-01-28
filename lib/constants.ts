@@ -11,8 +11,8 @@ export const SOCIAL_USERNAMES = {
   twitter: 'edgarlr_',
   instagram: 'edgar.lr',
   facebook: 'edgarlr',
-  youtube: 'edgarlr',
-  linkedin: 'edgarlr',
+  youtube: null,
+  linkedin: null,
 }
 
 // Default SEO

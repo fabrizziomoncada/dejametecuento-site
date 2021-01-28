@@ -37,9 +37,9 @@ const ListsPage = () => {
         </section>
       ) : (
         <div className="flex flex-col items-center mt-1/3 text-secondary">
-          <div className="w-2/3 pb-1/3 mb-2 rounded-sm bg-indigo-400" />
-          <div className="w-2/4 pb-4 mb-2 rounded-sm bg-indigo-200" />
-          <div className="w-2/5 pb-4 mb-6 rounded-sm bg-indigo-100" />
+          <div className="w-2/3 pb-1/3 mb-2 rounded-sm bg-blue" />
+          <div className="w-2/4 pb-4 mb-2 rounded-sm bg-blue" />
+          <div className="w-2/5 pb-4 mb-6 rounded-sm bg-blue" />
           <p className="font-bold">Aún no hay artículos guardados</p>
           <span className="text-xs mt-2 w-5/6 text-center">
             Explora la revista y guarda lo que quieras leer más tarde. Los
@@ -47,7 +47,7 @@ const ListsPage = () => {
           </span>
 
           <Button
-            className="bg-indigo-500 mt-6 px-4 text-white"
+            className="bg-blue mt-6 px-4 text-white"
             onClick={() => router.push('/')}
           >
             Regresar

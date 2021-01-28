@@ -1,5 +1,5 @@
 .root {
-  @apply sticky flex items-center my-2 h-12 top-0 z-10 bg-primary;
+  @apply sticky flex items-center my-2 h-12 top-0 z-10 bg-secondary;
 }
 
 .title {

@@ -45,7 +45,7 @@ function SearchPage({
 
   return (
     <>
-      <header className="fixed flex items-center top-0 right-0 left-0 px-2 z-20 h-16 bg-white">
+      <header className="fixed flex items-center top-0 right-0 left-0 px-2 z-20 h-16 bg-secondary">
         <Link href="/">
           <a className="serif text-xl absolute left-1/2 transform -translate-x-1/2">
             Déjame te Cuento
@@ -69,9 +69,9 @@ function SearchPage({
           />
         ) : (
           <div className="flex flex-col items-center mt-1/5 text-secondary">
-            <div className="w-2/3 pb-1/3 mb-2 rounded-sm bg-indigo-400" />
-            <div className="w-2/4 pb-4 mb-2 rounded-sm bg-indigo-200" />
-            <div className="w-2/5 pb-4 mb-6 rounded-sm bg-indigo-100" />
+            <div className="w-2/3 pb-1/3 mb-2 rounded-sm bg-blue" />
+            <div className="w-2/4 pb-4 mb-2 rounded-sm bg-blue" />
+            <div className="w-2/5 pb-4 mb-6 rounded-sm bg-blue" />
             <p className="font-bold">No hay resultados</p>
             <span className="text-xs">Reitenta modificando tu búsqueda</span>
           </div>

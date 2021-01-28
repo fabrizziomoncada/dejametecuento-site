@@ -3,18 +3,42 @@ module.exports = {
   darkMode: false,
   theme: {
     borderColor: (theme) => ({
-      DEFAULT: theme('var(--primary-2)', 'currentColor'),
-      primary: 'var(--primary-1)',
-      secondary: 'var(--primary-2)',
-      tertiary: 'var(--secondary)',
-      danger: 'var(--red)',
-      succes: 'var(--green)',
+      ...theme('colors'),
+      DEFAULT: theme('colors.primary.20', 'currentColor'),
     }),
+    colors: {
+      transparent: 'transparent',
+      current: 'currentColor',
+      primary: {
+        DEFAULT: 'var(--primary)',
+        95: 'var(--primary-95)',
+        90: 'var(--primary-90)',
+        80: 'var(--primary-80)',
+        60: 'var(--primary-60)',
+        40: 'var(--primary-40)',
+        20: 'var(--primary-20)',
+        10: 'var(--primary-10)',
+        '05': 'var(--primary-05)',
+      },
+      secondary: 'var(--secondary)',
+      accent: 'var(--accent)',
+      blue: {
+        DEFAULT: 'var(--accent)',
+        light: 'var(--blue-light)',
+        10: 'var(--blue-10)',
+      },
+    },
     fontFamily: {
       sans: 'var(--font-sans)',
       serif: 'var(--font-serif)',
     },
     extend: {
+      textColor: {
+        primary: 'var(--text-primary)',
+        secondary: 'var(--text-secondary)',
+        tertiary: 'var(--text-tertiary)',
+        accent: 'var(--text-accent)',
+      },
       lineHeight: {
         article: '1.675',
       },
@@ -32,21 +56,6 @@ module.exports = {
         '3/5': '60%',
         '4/5': '80%',
         full: '100%',
-      },
-      textColor: {
-        primary: 'var(--text-primary)',
-        secondary: 'var(--text-secondary)',
-        accent: 'var(--text-accent)',
-      },
-      colors: {
-        primary: 'var(--primary)',
-        'primary-2': 'var(--primary-2)',
-        secondary: 'var(--secondary)',
-        'secondary-2': 'var(--secondary-2)',
-        hover: 'var(--hover)',
-        'hover-1': 'var(--hover-1)',
-        'hover-2': 'var(--hover-2)',
-        blue: 'var(--blue)',
       },
       screens: {
         standalone: {
