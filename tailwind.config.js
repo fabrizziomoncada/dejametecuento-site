@@ -10,11 +10,11 @@ module.exports = {
       danger: 'var(--red)',
       succes: 'var(--green)',
     }),
+    fontFamily: {
+      sans: 'var(--font-sans)',
+      serif: 'var(--font-serif)',
+    },
     extend: {
-      fontFamily: {
-        sans: 'var(--font-sans)',
-        serif: 'var(--font-serif)',
-      },
       lineHeight: {
         article: '1.675',
       },
@@ -33,11 +33,6 @@ module.exports = {
         '4/5': '80%',
         full: '100%',
       },
-      boxShadow: {
-        'outline-2': '0 0 0 2px var(--accents-2)',
-        magical:
-          'rgba(0, 0, 0, 0.02) 0px 30px 30px, rgba(0, 0, 0, 0.03) 0px 0px 8px, rgba(0, 0, 0, 0.05) 0px 1px 0px',
-      },
       textColor: {
         primary: 'var(--text-primary)',
         secondary: 'var(--text-secondary)',
@@ -51,12 +46,7 @@ module.exports = {
         hover: 'var(--hover)',
         'hover-1': 'var(--hover-1)',
         'hover-2': 'var(--hover-2)',
-        violet: 'var(--violet)',
-        pink: 'var(--pink)',
-        cyan: 'var(--cyan)',
         blue: 'var(--blue)',
-        green: 'var(--green)',
-        red: 'var(--red)',
       },
       screens: {
         standalone: {
