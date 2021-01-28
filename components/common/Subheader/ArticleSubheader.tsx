@@ -3,17 +3,20 @@ import Link from 'next/link'
 import { useEffect, useState } from 'react'
 import s from './Subheader.module.css'
 import cn from 'classnames'
-import { Button } from '@components/ui/Button'
-import Close from '@components/icons/Close'
-import { OptionsMenu } from '@components/ui/OptionsMenu'
+// import { Button } from '@components/ui/Button'
+// import Close from '@components/icons/Close'
+// import { OptionsMenu } from '@components/ui/OptionsMenu'
+// import Share from '@components/icons/Share'
+// import AddToListButton from '@components/article/Article/AddToListButton'
+// import ShareButton from '../ShareButton'
 
 type Props = {
-  title: string
+  article: TArticle
 }
 
-const ArticleSubheader = ({ title }: Props) => {
+const ArticleSubheader = ({ article }: Props) => {
   const [isShowed, setIsShowed] = useState(false)
-  const [isOptionsShowed, setIsOptionsShowed] = useState(false)
+  // const [isOptionsShowed, setIsOptionsShowed] = useState(false)
 
   const showText = () => {
     if (window.scrollY > 250) {
@@ -30,15 +33,32 @@ const ArticleSubheader = ({ title }: Props) => {
     }
   }, [])
 
-  const ArticleActions = () => (
-    <OptionsMenu handleOnClose={() => setIsOptionsShowed(false)}>
-      <ul>
-        <li>Hola</li>
-        <li>Hola</li>
-        <li>Hola</li>
-      </ul>
-    </OptionsMenu>
-  )
+  // const ArticleActions = () => (
+  //   <OptionsMenu handleOnClose={() => setIsOptionsShowed(false)}>
+  //     <p>Acciones</p>
+  //     <ul>
+  //       <li className="flex justify-between">
+  //         Share{' '}
+  //         <ShareButton
+  //           path={`/articles/${article.slug}`}
+  //           title={article.title}
+  //           message={'Check this article'}
+  //         />
+  //       </li>
+  //       <li className="flex justify-between">
+  //         Guardar <AddToListButton article={article} />
+  //       </li>
+  //       <li className="flex justify-between">
+  //         Tema Claro <Share />
+  //       </li>
+  //       <Link href={`/contributors/edgar-lopez`}>
+  //         <li className="flex justify-between">
+  //           Ver más del autor <Share />
+  //         </li>
+  //       </Link>
+  //     </ul>
+  //   </OptionsMenu>
+  // )
 
   return (
     <div className={s.root}>
@@ -49,16 +69,16 @@ const ArticleSubheader = ({ title }: Props) => {
       </Link>
 
       <p className={cn('serif', s.articleTitle, { [s.show]: isShowed })}>
-        {title}
+        {article.title}
       </p>
 
-      {isShowed && (
+      {/* {isShowed && (
         <Button className="ml-auto" onClick={() => setIsOptionsShowed(true)}>
           <Close />
         </Button>
-      )}
+      )} */}
 
-      {isOptionsShowed && <ArticleActions />}
+      {/* {isOptionsShowed && <ArticleActions />} */}
     </div>
   )
 }

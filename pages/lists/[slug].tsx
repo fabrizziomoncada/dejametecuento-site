@@ -31,7 +31,7 @@ function ArticlePage() {
   }
 
   return (
-    <Layout subheader={<ArticleSubheader title={article.title} />}>
+    <Layout subheader={<ArticleSubheader article={article} />}>
       <Article article={article as TArticle} />
     </Layout>
   )
