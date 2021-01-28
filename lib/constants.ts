@@ -13,7 +13,6 @@ export const SOCIAL_USERNAMES = {
   facebook: 'edgarlr',
   youtube: 'edgarlr',
   linkedin: 'edgarlr',
-  email: 'edgarlr',
 }
 
 // Default SEO

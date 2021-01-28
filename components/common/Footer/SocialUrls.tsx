@@ -1,10 +1,11 @@
 import Facebook from '@components/icons/Facebook'
 import Instagram from '@components/icons/Instagram'
 import Linkedin from '@components/icons/Linkedin'
+import Mail from '@components/icons/Mail'
 import Twitter from '@components/icons/Twitter'
 import Youtube from '@components/icons/Youtube'
 import ExternalLink from '@components/ui/Link/ExternalLink'
-import { SOCIAL_USERNAMES } from '@lib/constants'
+import { SOCIAL_USERNAMES, CONTACT_EMAIL } from '@lib/constants'
 
 const SocialUrls = () => {
   const { twitter, instagram, facebook, youtube, linkedin } = SOCIAL_USERNAMES
@@ -38,6 +39,13 @@ const SocialUrls = () => {
             ariaLabel="Facebook"
           >
             <Facebook />
+          </ExternalLink>
+        </li>
+      )}
+      {CONTACT_EMAIL && (
+        <li className="px-2">
+          <ExternalLink to={`mailto:${CONTACT_EMAIL}`} ariaLabel="Send Email">
+            <Mail />
           </ExternalLink>
         </li>
       )}
