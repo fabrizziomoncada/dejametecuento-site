@@ -21,6 +21,7 @@ module.exports = {
         '05': 'var(--primary-05)',
       },
       secondary: 'var(--secondary)',
+      'black-a-30': 'var(--black-a-30)',
       accent: 'var(--accent)',
       blue: {
         DEFAULT: 'var(--accent)',

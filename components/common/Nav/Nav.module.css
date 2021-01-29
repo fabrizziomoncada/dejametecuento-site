@@ -29,7 +29,7 @@
 
 .listView::after {
   content: '';
-  @apply bg-primary bg-opacity-30 absolute right-0 bottom-0 left-0 h-screen block transform translate-y-full;
+  @apply absolute bg-black-a-30 right-0 bottom-0 left-0 h-screen block transform translate-y-full;
 }
 
 .listView .link {
