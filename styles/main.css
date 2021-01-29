@@ -73,7 +73,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: var(--secondary);
-  color: var(--text-primary-95);
+  color: var(--primary-95);
 }
 
 body {
