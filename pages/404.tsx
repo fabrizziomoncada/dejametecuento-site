@@ -12,7 +12,7 @@ export default function custom404() {
       <div className="w-9/12 text-center block mt-1/3 mx-auto">
         <h1 className="text-8xl text-accent my-8">404</h1>
         <p className="font-bold text-lg">Página no encontrada :c</p>
-        <span className="text-gray-600 text-sm">
+        <span className="text-primary-300 text-sm">
           Revisa la url o intenta de nuevo
         </span>
       </div>

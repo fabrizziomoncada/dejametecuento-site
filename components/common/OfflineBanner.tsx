@@ -7,7 +7,7 @@ const OfflineBanner = () => {
 
   return (
     <div className="flex justify-center items-center fixed bottom-0 py-2 left-0 right-0 bg-accent z-20">
-      <p className="text-gray-300">No Internet Connection</p>
+      <p className="text-primary-30">No Internet Connection</p>
     </div>
   )
 }

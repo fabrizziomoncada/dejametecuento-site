@@ -13,7 +13,7 @@ const MobileModal = ({ children, onClick, className = '' }: Props) => {
   return (
     <div
       className={cn(
-        'fixed z-50 bottom-0 left-0 right-0 top-0 bg-primary bg-opacity-30',
+        'fixed z-50 bottom-0 left-0 right-0 top-0 bg-primary',
         className
       )}
     >
