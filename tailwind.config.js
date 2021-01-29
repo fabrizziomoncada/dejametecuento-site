@@ -33,12 +33,6 @@ module.exports = {
       serif: 'var(--font-serif)',
     },
     extend: {
-      textColor: {
-        primary: 'var(--text-primary)',
-        secondary: 'var(--text-secondary)',
-        tertiary: 'var(--text-tertiary)',
-        accent: 'var(--text-accent)',
-      },
       lineHeight: {
         article: '1.675',
       },

@@ -47,7 +47,7 @@ const SearchInput = ({ handleOnClose }: { handleOnClose: () => void }) => {
           }}
         />
         <Button
-          className="text-white bg-accent"
+          className="text-secondary bg-accent"
           onClick={(e) => {
             e.preventDefault()
             const q = searchInput.current?.value

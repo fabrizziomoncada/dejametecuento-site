@@ -1,9 +1,9 @@
 .root li {
-  @apply font-bold text-secondary py-2 hover:opacity-40 px-2;
+  @apply font-bold text-primary-60 py-2 hover:opacity-40 px-2;
 }
 
 .root p {
-  @apply mb-4 text-secondary uppercase text-xs;
+  @apply mb-4 text-primary-60 uppercase text-xs;
 }
 
 .root li.active {

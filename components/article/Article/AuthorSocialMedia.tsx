@@ -12,7 +12,7 @@ function AuthorSocialMedia({ urls }: { urls: TContributor['urls'] }) {
   if (twitter) {
     return (
       <ExternalLink
-        className="text-secondary flex items-center pt-1"
+        className="text-primary-60 flex items-center pt-1"
         to={`https://twitter.com/${twitter}`}
         ariaLabel="Author's twitter"
       >
@@ -25,7 +25,7 @@ function AuthorSocialMedia({ urls }: { urls: TContributor['urls'] }) {
   if (instagram) {
     return (
       <ExternalLink
-        className="text-secondary flex items-center pt-1"
+        className="text-primary-60 flex items-center pt-1"
         to={`https://instagram.com/${instagram}`}
         ariaLabel="Author's instagram"
       >
@@ -38,7 +38,7 @@ function AuthorSocialMedia({ urls }: { urls: TContributor['urls'] }) {
   if (facebook) {
     return (
       <ExternalLink
-        className="text-secondary flex items-center pt-1"
+        className="text-primary-60 flex items-center pt-1"
         to={`https://facebook.com/${facebook}`}
         ariaLabel="Author's facebook"
       >

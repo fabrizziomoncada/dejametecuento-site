@@ -3,7 +3,7 @@
 }
 
 .link {
-  @apply uppercase mx-4 py-2 text-secondary text-xs font-bold;
+  @apply uppercase mx-4 py-2 text-primary-60 text-xs font-bold;
 }
 
 .link:first-child {
@@ -16,7 +16,7 @@
 }
 
 .active {
-  @apply border-b-2 text-primary;
+  @apply border-b-2 text-primary-95;
 }
 
 .hide {
@@ -41,7 +41,7 @@
 }
 
 .listView p {
-  @apply mb-4 text-secondary uppercase text-xs;
+  @apply mb-4 text-primary-60 uppercase text-xs;
 }
 
 .button {

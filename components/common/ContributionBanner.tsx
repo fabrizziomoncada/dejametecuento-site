@@ -5,7 +5,7 @@ const ContributionBanner = () => {
   return (
     <div className="w-full text-center py-16">
       <h5 className="serif text-4xl mb-4">¿Quieres contribuir?</h5>
-      <p className="text-gray-500 py-1">Siéntete libre de contactarnos a:</p>
+      <p className="py-1">Siéntete libre de contactarnos a:</p>
       <ExternalLink
         to={`mailto:${CONTACT_EMAIL}`}
         ariaLabel="Enviar email"

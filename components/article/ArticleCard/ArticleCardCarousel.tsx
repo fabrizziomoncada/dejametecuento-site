@@ -16,7 +16,7 @@ const ArticleCardCarousel = ({ article, route }: Props) => {
     <article className={cn(s.carousel, 'pt-2 mr-12')}>
       <header>
         <Link href={`/${article.category.slug}`}>
-          <a className="uppercase text-sm font-bold px-2 py-1 text-accent border rounded-sm">
+          <a className="uppercase text-sm font-bold px-2 py-1 text-accent border border-accent rounded-sm">
             {article.category.title}
           </a>
         </Link>

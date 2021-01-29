@@ -39,7 +39,7 @@ const ArticleCard = ({
 
       <section className="pt-8">
         <Link href={`/${article.category.slug}`}>
-          <a className="uppercase text-sm font-bold px-2 py-1 text-accent border rounded-sm">
+          <a className="uppercase text-sm font-bold px-2 py-1 text-accent border border-accent rounded-sm">
             {article.category.title}
           </a>
         </Link>

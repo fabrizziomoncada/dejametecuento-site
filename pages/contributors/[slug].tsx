@@ -71,9 +71,9 @@ function ContributorPage({
           </figure>
         )}
         <h3 className="serif text-3xl">{contributor?.name}</h3>
-        <p className="capitalize text-secondary">{contributor?.role}</p>
+        <p className="capitalize text-primary-60">{contributor?.role}</p>
 
-        <p className="text-secondary capitalize">
+        <p className="text-primary-60 capitalize">
           {articles?.length}{' '}
           {articles?.length === 1 ? 'Contribución' : 'Contribuciones'}
         </p>
