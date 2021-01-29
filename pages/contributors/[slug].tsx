@@ -89,13 +89,12 @@ function ContributorPage({
           {articles?.length}{' '}
           {articles?.length === 1 ? 'Contribución' : 'Contribuciones'}
         </p> */}
-
-        {isFeatured && (
-          <p className="text-left border-t my-10 py-10 leading-tight">
-            {contributor?.featured?.description}
-          </p>
-        )}
       </section>
+      {isFeatured && (
+        <p className="text-left border-b py-12 leading-tight">
+          {contributor?.featured?.description}
+        </p>
+      )}
       <ArticlesList articles={articles || []} title="Contribuciones" />
     </Layout>
   )
