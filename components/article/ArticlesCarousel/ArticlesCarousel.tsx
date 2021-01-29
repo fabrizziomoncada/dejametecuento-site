@@ -1,7 +1,6 @@
 import ArticleCardCarousel from '../ArticleCard/ArticleCardCarousel'
 import { useEffect, useRef, useState } from 'react'
 import cn from 'classnames'
-import s from './ArticlesCarousel.module.css'
 
 type Props = {
   articles: TArticle[]
@@ -11,19 +10,8 @@ const ArticlesCarousel = ({ articles }: Props) => {
   const [scrollProgress, setScrollProgress] = useState(0)
   const carouselRef = useRef<HTMLDivElement>(null)
 
-  // const scrollToLeft = (e: MouseEvent<HTMLButtonElement>) => {
-  //   e.preventDefault()
-  //   carouselRef.current?.scrollBy({ left: -1, top: 0, behavior: 'smooth' })
-  // }
-
-  // const scrollToRight = (e: MouseEvent<HTMLButtonElement>) => {
-  //   e.preventDefault()
-  //   carouselRef.current?.scrollBy({ left: 1, top: 0, behavior: 'smooth' })
-  // }
-
   useEffect(() => {
     if (!carouselRef.current) return
-
     const element = carouselRef.current
 
     const scrollListener = () => {
@@ -44,12 +32,14 @@ const ArticlesCarousel = ({ articles }: Props) => {
   }, [])
 
   const renderScrollIndicator = () => {
-    const selected = (scrollProgress * articles.length) / 100
+    const selectedRange = Math.floor((scrollProgress * articles.length) / 110)
+
     return articles.map((article, index) => (
       <div
-        className={cn('w-full mx-1 bg-primary-40 pb-1 rounded-sm', {
-          [s.active]: selected >= index && selected <= index + 1,
-        })}
+        className={cn(
+          'w-full mx-1 bg-primary-40 pb-1 rounded-sm',
+          selectedRange === index ? 'bg-primary' : ''
+        )}
         key={article.slug}
       ></div>
     ))
@@ -68,18 +58,6 @@ const ArticlesCarousel = ({ articles }: Props) => {
 
       <div className="flex justify-between h-auto mt-12 ">
         {renderScrollIndicator()}
-        {/* <ul className="flex">
-          <li>
-            <Button onClick={scrollToLeft} ariaLabel="Previus article">
-              <ArrowLeft />
-            </Button>
-          </li>
-          <li>
-            <Button onClick={scrollToRight} ariaLabel="Next article">
-              <ArrowRight />
-            </Button>
-          </li>
-        </ul> */}
       </div>
     </section>
   )
