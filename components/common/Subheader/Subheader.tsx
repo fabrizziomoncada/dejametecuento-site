@@ -3,7 +3,7 @@ import Link from 'next/link'
 import s from './Subheader.module.css'
 import cn from 'classnames'
 
-const Subheader = ({ title, to }: { title: string; to: string }) => {
+const Subheader = ({ title, to }: { title: string; to?: string }) => {
   return (
     <div className={cn(s.root, 'justify-center')}>
       <Link href={to ? to : '/'}>
