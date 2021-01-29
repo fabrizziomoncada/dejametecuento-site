@@ -10,8 +10,8 @@ function Article({ article }: { article: TArticle | undefined }) {
   if (!article) return <p>Something went wrong</p>
 
   return (
-    <article>
-      <header className="py-8">
+    <article className="flex flex-col border-b mb-14">
+      <header className="pt-8 mb-14 border-b">
         <Link href={`/${article.category.slug}`}>
           <a className="uppercase text-sm font-bold px-2 py-1 text-accent border border-accent rounded-sm">
             {article.category.title}
@@ -37,14 +37,20 @@ function Article({ article }: { article: TArticle | undefined }) {
           />
         </div>
 
-        <ActionButtons article={article} className="justify-center" />
+        <ActionButtons
+          article={article}
+          className="bg-secondary w-max mx-auto px-2 transform translate-y-1/2"
+        />
       </header>
 
       <Markdown content={article.content} />
 
-      <footer className="border-t border-primary py-6">
+      <footer className="border-t border-dashed pt-10">
         <AuthorCard author={article.author} />
-        <ActionButtons article={article} className="mt-6 justify-center" />
+        <ActionButtons
+          article={article}
+          className="mt-6 bg-secondary w-max mx-auto px-2 transform translate-y-1/2"
+        />
       </footer>
     </article>
   )
