@@ -7,6 +7,7 @@ import ExternalLink from '@components/ui/Link/ExternalLink'
 import Image from 'next/image'
 import { Layout } from '@components/common/Layout'
 import { Subheader } from '@components/common/Subheader'
+import Twitter from '@components/icons/Twitter'
 
 export async function getStaticPaths() {
   // If you don't have too many contributors you can uncomment
@@ -58,8 +59,8 @@ function ContributorPage({
   )
 
   return (
-    <Layout subheader={<Subheader title="Contribuidores" />}>
-      <section className="text-center py-10 border-b">
+    <Layout subheader={<Subheader title="Contribuidores" to="/contributors" />}>
+      <section className="text-center py-10 border-b border-dashed">
         {isFeatured && (
           <figure className="relative w-28 h-28 mx-auto mb-4">
             <Image
@@ -73,21 +74,24 @@ function ContributorPage({
         <h3 className="serif text-3xl">{contributor?.name}</h3>
         <p className="capitalize text-primary-60">{contributor?.role}</p>
 
-        <p className="text-primary-60 capitalize">
-          {articles?.length}{' '}
-          {articles?.length === 1 ? 'Contribución' : 'Contribuciones'}
-        </p>
         {contributor?.urls?.twitter && (
           <ExternalLink
             to={`https://twitter.com/${contributor?.urls.twitter}`}
             ariaLabel="Contributor's twitter"
-            className="text-accent"
+            className="text-accent flex justify-center items-center mt-4 mb-2"
           >
-            @{contributor?.urls.twitter}
+            <Twitter className="mr-2" height="18" width="18" />
+            {contributor?.urls.twitter}
           </ExternalLink>
         )}
+
+        {/* <p className="text-primary-60 capitalize">
+          {articles?.length}{' '}
+          {articles?.length === 1 ? 'Contribución' : 'Contribuciones'}
+        </p> */}
+
         {isFeatured && (
-          <p className="text-left border-t border-dashed my-10 py-10 leading-tight">
+          <p className="text-left border-t my-10 py-10 leading-tight">
             {contributor?.featured?.description}
           </p>
         )}

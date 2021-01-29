@@ -3,10 +3,10 @@ import Link from 'next/link'
 import s from './Subheader.module.css'
 import cn from 'classnames'
 
-const Subheader = ({ title }: { title: string }) => {
+const Subheader = ({ title, to }: { title: string; to: string }) => {
   return (
     <div className={cn(s.root, 'justify-center')}>
-      <Link href="/">
+      <Link href={to ? to : '/'}>
         <a className="absolute left-0" aria-label="Go back">
           <ArrowLeft />
         </a>
