@@ -6,8 +6,8 @@
   @apply mb-4 text-primary-60 uppercase text-xs;
 }
 
-.root li.active {
-  @apply bg-blue rounded-sm text-accent;
+.root li.filter-active {
+  @apply text-blue;
 }
 
 .root li:last-child {

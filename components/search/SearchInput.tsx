@@ -27,7 +27,7 @@ const SearchInput = ({ categories }: { categories: TCategory[] }) => {
           >
             <li
               className={cn({
-                ['active']: !sort || sort === 'asc',
+                ['filter-active']: !sort || sort === 'asc',
               })}
             >
               Más reciente
@@ -41,7 +41,7 @@ const SearchInput = ({ categories }: { categories: TCategory[] }) => {
           >
             <li
               className={cn({
-                ['active']: sort === 'desc',
+                ['filter-active']: sort === 'desc',
               })}
             >
               Más Antiguo
@@ -58,7 +58,7 @@ const SearchInput = ({ categories }: { categories: TCategory[] }) => {
           >
             <li
               className={cn({
-                ['active']: !category,
+                ['filter-active']: !category,
               })}
             >
               Todas las entradas
@@ -74,7 +74,7 @@ const SearchInput = ({ categories }: { categories: TCategory[] }) => {
             >
               <li
                 className={cn({
-                  ['active']: category === c.slug,
+                  ['filter-active']: category === c.slug,
                 })}
               >
                 {c.title}
