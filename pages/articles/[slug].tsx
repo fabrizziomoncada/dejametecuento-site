@@ -86,7 +86,11 @@ function ArticlePage({
       />
       <Layout subheader={<ArticleSubheader article={article!} />}>
         <Article article={article} />
-        <ArticlesList articles={recentArticles!} title="Continúa Leyendo" />
+        <ArticlesList
+          articles={recentArticles!}
+          title="Continúa Leyendo"
+          variant="compact"
+        />
         {preview && <ExitPreviewButton />}
       </Layout>
     </>

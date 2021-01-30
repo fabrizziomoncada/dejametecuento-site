@@ -63,6 +63,7 @@ function SearchPage({
         {/* {isLoading && <p>Loading...</p>} */}
         {sortedArticles && sortedArticles.length !== 0 ? (
           <ArticlesList
+            variant="compact"
             articles={sortedArticles}
             title={`${sortedArticles.length} ${
               sortedArticles.length === 1 ? 'Artículo' : 'Artículos'
