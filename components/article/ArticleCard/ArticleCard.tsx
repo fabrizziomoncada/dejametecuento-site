@@ -4,18 +4,11 @@ import Link from 'next/link'
 import s from './ArticleCard.module.css'
 import cn from 'classnames'
 import Image from 'next/image'
-import ActionButtons from '../Article/ActionButtons'
 
-type Props = {
-  article: TArticle
-  route?: string
-  actions?: boolean
-}
-
-const ArticleCard = ({ article, route, actions = false }: Props) => {
+const ArticleCard = ({ article }: { article: TArticle }) => {
   return (
     <article className={s.default}>
-      <Link href={`/${route || 'articles'}/${article.slug}`}>
+      <Link href={`/articles/${article.slug}`}>
         <figure>
           <Image
             src={getMediaURL(article.cover.url)}
@@ -32,7 +25,7 @@ const ArticleCard = ({ article, route, actions = false }: Props) => {
             {article.category.title}
           </a>
         </Link>
-        <Link href={`/${route || 'articles'}/${article.slug}`}>
+        <Link href={`/articles/${article.slug}`}>
           <h3
             className={cn(
               s.title,
@@ -51,8 +44,6 @@ const ArticleCard = ({ article, route, actions = false }: Props) => {
           <Date className="px-2" date={article.published_at as string} />
         </div>
       </section>
-
-      {actions && <ActionButtons article={article} />}
     </article>
   )
 }

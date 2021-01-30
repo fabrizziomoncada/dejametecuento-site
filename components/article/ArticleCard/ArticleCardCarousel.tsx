@@ -6,12 +6,7 @@ import cn from 'classnames'
 import Image from 'next/image'
 import ActionButtons from '../Article/ActionButtons'
 
-type Props = {
-  article: TArticle
-  route?: string
-}
-
-const ArticleCardCarousel = ({ article, route }: Props) => {
+const ArticleCardCarousel = ({ article }: { article: TArticle }) => {
   return (
     <article className={cn(s.carousel, 'pt-2 mr-12')}>
       <header>
@@ -20,7 +15,7 @@ const ArticleCardCarousel = ({ article, route }: Props) => {
             {article.category.title}
           </a>
         </Link>
-        <Link href={`/${route || 'articles'}/${article.slug}`}>
+        <Link href={`/articles/${article.slug}`}>
           <h3
             className={cn(
               s.title,
@@ -32,7 +27,7 @@ const ArticleCardCarousel = ({ article, route }: Props) => {
         </Link>
       </header>
 
-      <Link href={`/${route || 'articles'}/${article.slug}`}>
+      <Link href={`/articles/${article.slug}`}>
         <figure>
           <Image
             src={getMediaURL(article.cover.url)}

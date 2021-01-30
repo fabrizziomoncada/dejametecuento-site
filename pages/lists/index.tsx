@@ -1,4 +1,3 @@
-import { ArticleCard } from '@components/article'
 import { useState, useEffect } from 'react'
 import { getAllStoredContent } from '@lib/storage'
 import { Button } from '@components/ui/Button'
@@ -6,6 +5,7 @@ import { useRouter } from 'next/router'
 import { Layout } from '@components/common/Layout'
 import { Subheader } from '@components/common/Subheader'
 import EmptyList from '@components/common/EmptyList'
+import { ArticlesList } from '@components/article'
 
 const ListsPage = () => {
   const [list, setList] = useState<TArticle[]>([])
@@ -23,19 +23,15 @@ const ListsPage = () => {
   return (
     <Layout subheader={<Subheader title="Listas de lecturas" />}>
       {list && list.length !== 0 ? (
-        <section>
-          <div className="py-2 flex justify-between items-center">
-            <h6 className="uppercase">{list.length} Articles</h6>
-          </div>
-          {list.map((article) => (
-            <ArticleCard
-              article={article}
-              key={article.slug}
-              route="lists"
-              actions
-            />
-          ))}
-        </section>
+        <ArticlesList
+          articles={list}
+          variant="lists"
+          title={
+            list.length === 1
+              ? `${list.length} Artículo`
+              : `${list.length} Artículos`
+          }
+        />
       ) : (
         <>
           <EmptyList

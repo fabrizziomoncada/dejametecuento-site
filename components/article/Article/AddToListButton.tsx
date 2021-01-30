@@ -2,12 +2,14 @@ import { useState, useEffect } from 'react'
 import { removeContent, storeContent, getAllStoredContent } from '@lib/storage'
 import Bookmark from '@components/icons/Bookmark'
 import { Button } from '@components/ui/Button'
+import Trash from '@components/icons/Trash'
 
 type Props = {
   article: TArticle
+  icon?: 'trash' | 'default'
 }
 
-const AddToListButton = ({ article }: Props) => {
+const AddToListButton = ({ article, icon = 'default' }: Props) => {
   const [list, setList] = useState<TArticle[]>([])
 
   useEffect(() => {
@@ -37,7 +39,11 @@ const AddToListButton = ({ article }: Props) => {
 
   return (
     <Button onClick={onButtonClick} ariaLabel="Add to list">
-      <Bookmark style={isOnList ? { fill: 'currentColor' } : {}} />
+      {icon === 'trash' ? (
+        <Trash />
+      ) : (
+        <Bookmark style={isOnList ? { fill: 'currentColor' } : {}} />
+      )}
     </Button>
   )
 }
