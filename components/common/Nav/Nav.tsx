@@ -47,6 +47,7 @@ const Nav = ({ categories }: { categories: TCategory[] }) => {
         <Button
           onClick={() => setIsExpanded(!isExpanded)}
           className={isExpanded ? s.expandedButton : s.button}
+          ariaLabel="Expandir navegación"
         >
           {isExpanded ? <ChevronUp /> : <ChevronDown />}
         </Button>
