@@ -1,7 +1,7 @@
 {
-  "name": "Magazine",
-  "short_name": "Magazine",
-  "description": "Online magazine starter kit",
+  "name": "Déjame te Cuento",
+  "short_name": "DTC",
+  "description": "Tu fuente de información",
   "display": "standalone",
   "start_url": "/",
   "theme_color": "#ffffff",

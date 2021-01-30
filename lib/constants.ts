@@ -2,7 +2,7 @@
 export const TwitterURL = 'https://twitter.com'
 
 // Global Data
-export const SITE_URL = 'https://magazine-starter.vercel.app'
+export const SITE_URL = 'https://dejametecuento.vercel.app'
 export const SITE_NAME = 'Déjame te Cuento'
 
 export const CONTACT_EMAIL = 'dejametecuent@gmail.com'
