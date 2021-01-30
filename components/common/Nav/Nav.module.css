@@ -3,7 +3,7 @@
 }
 
 .link {
-  @apply uppercase mx-4 py-2 text-primary-60 text-xs font-bold;
+  @apply uppercase mx-3 py-2 text-primary-60 text-xs font-bold;
 }
 
 .link:first-child {
