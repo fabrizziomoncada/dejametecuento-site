@@ -27,8 +27,8 @@ const ArticlesCarousel = ({ articles }: Props) => {
       return setScrollProgress((windowScroll / totalWidth) * 100)
     }
 
-    element.addEventListener('touchmove', scrollListener)
-    return () => element.removeEventListener('touchmove', scrollListener)
+    element.addEventListener('scroll', scrollListener)
+    return () => element.removeEventListener('scroll', scrollListener)
   }, [])
 
   const renderScrollIndicator = () => {
