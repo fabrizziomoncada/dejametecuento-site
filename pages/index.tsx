@@ -20,6 +20,16 @@ function Home({
       <ArticlesList articles={articles} title="Entradas Recientes" />
       <ArticlesList
         articles={articles}
+        title="Articulos Principales"
+        variant="top"
+      />
+      <ArticlesList
+        articles={articles}
+        title="Artículos Más leidos"
+        variant="top"
+      />
+      <ArticlesList
+        articles={articles}
         title="Continúa Leyendo"
         variant="compact"
       />

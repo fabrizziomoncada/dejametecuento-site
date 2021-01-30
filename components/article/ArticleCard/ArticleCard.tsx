@@ -8,24 +8,13 @@ import ActionButtons from '../Article/ActionButtons'
 
 type Props = {
   article: TArticle
-  variant?: 'default' | 'compact'
   route?: string
   actions?: boolean
 }
 
-const ArticleCard = ({
-  article,
-  variant = 'default',
-  route,
-  actions = false,
-}: Props) => {
-  const rootClassName = cn({
-    [s.default]: variant === 'default',
-    [s.compact]: variant === 'compact',
-  })
-
+const ArticleCard = ({ article, route, actions = false }: Props) => {
   return (
-    <article className={rootClassName}>
+    <article className={s.default}>
       <Link href={`/${route || 'articles'}/${article.slug}`}>
         <figure>
           <Image
@@ -47,13 +36,13 @@ const ArticleCard = ({
           <h3
             className={cn(
               s.title,
-              'serif leading-tight overflow-hidden max-h-28 mt-3 mb-4'
+              'serif leading-tight overflow-hidden max-h-28 mt-4 mb-2'
             )}
           >
             {article.title}
           </h3>
         </Link>
-        <div className="flex text-s">
+        <div className="flex text-sm">
           By
           <Link href={`/contributors/${article.author.slug}`}>
             <p className="pl-1 pr-2 font-bold">{article.author.name}</p>

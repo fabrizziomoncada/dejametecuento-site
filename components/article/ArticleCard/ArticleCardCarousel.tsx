@@ -43,14 +43,14 @@ const ArticleCardCarousel = ({ article, route }: Props) => {
         </figure>
       </Link>
 
-      <section className="pt-6">
-        <div className="flex text-s">
+      <section className="pt-6 text-sm">
+        <div className="flex">
           By
           <Link href={`/contributors/${article.author.slug}`}>
             <p className="pl-1 pr-2 font-bold">{article.author.name}</p>
           </Link>
         </div>
-        <Date className="" date={article.published_at as string} />
+        <Date date={article.published_at as string} />
         <ActionButtons article={article} />
       </section>
     </article>
