@@ -11,7 +11,7 @@ function Article({ article }: { article: TArticle | undefined }) {
 
   return (
     <article className="flex flex-col border-b mb-14">
-      <header className="pt-8 mb-14 border-b">
+      <header className="pt-4 mb-14 border-b">
         <Link href={`/${article.category.slug}`}>
           <a className="uppercase text-sm font-bold px-2 py-1 text-accent border border-accent rounded-sm">
             {article.category.title}
