@@ -7,6 +7,7 @@ import { NextSeo } from 'next-seo'
 import ExitPreviewButton from '@components/common/ExitPreviewButton'
 import { Layout } from '@components/common/Layout'
 import ArticleSubheader from '@components/common/Subheader/ArticleSubheader'
+import { SITE_URL } from '@lib/constants'
 
 export async function getStaticPaths() {
   // If you don't have too many articles you can uncomment this code and pre-build each page instead
@@ -66,9 +67,7 @@ function ArticlePage({
             publishedTime: article?.published_at as string,
             modifiedTime: article?.updated_at as string,
             section: article?.category.title,
-            authors: [
-              `'https://www.example.com/contributors/'${article?.author.slug}`,
-            ],
+            authors: [`${SITE_URL}/contributors/'${article?.author.slug}`],
             tags: [`${article?.category.title}`],
           },
           // Only include OG image if exists
