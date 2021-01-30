@@ -17,7 +17,7 @@ const SearchInput = ({ categories }: { categories: TCategory[] }) => {
   const SearchFilters = () => {
     return (
       <OptionsMenu handleOnClose={() => setShowFilters(false)}>
-        <p>Ordernar Por</p>
+        <p className={s.heading}>Ordernar Por</p>
         <ul>
           <Link
             href={{
@@ -26,8 +26,8 @@ const SearchInput = ({ categories }: { categories: TCategory[] }) => {
             }}
           >
             <li
-              className={cn({
-                ['filter-active']: !sort || sort === 'asc',
+              className={cn(s.link, {
+                [s.filterActive]: !sort || sort === 'asc',
               })}
             >
               Más reciente
@@ -40,15 +40,15 @@ const SearchInput = ({ categories }: { categories: TCategory[] }) => {
             }}
           >
             <li
-              className={cn({
-                ['filter-active']: sort === 'desc',
+              className={cn(s.link, {
+                [s.filterActive]: sort === 'desc',
               })}
             >
               Más Antiguo
             </li>
           </Link>
         </ul>
-        <p>Filtrar por</p>
+        <p className={s.heading}>Filtrar por</p>
         <ul>
           <Link
             href={{
@@ -57,8 +57,8 @@ const SearchInput = ({ categories }: { categories: TCategory[] }) => {
             }}
           >
             <li
-              className={cn({
-                ['filter-active']: !category,
+              className={cn(s.link, {
+                [s.filterActive]: !category,
               })}
             >
               Todas las entradas
@@ -73,8 +73,8 @@ const SearchInput = ({ categories }: { categories: TCategory[] }) => {
               key={c.slug}
             >
               <li
-                className={cn({
-                  ['filter-active']: category === c.slug,
+                className={cn(s.link, {
+                  [s.filterActive]: category === c.slug,
                 })}
               >
                 {c.title}

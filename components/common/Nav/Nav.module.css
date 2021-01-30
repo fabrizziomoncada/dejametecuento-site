@@ -1,5 +1,5 @@
 .root {
-  @apply overflow-hidden overflow-x-scroll sticky flex whitespace-nowrap px-6 py-4 top-14 z-10 bg-secondary transform transition-transform duration-300 translate-y-0 md:justify-center;
+  @apply overflow-hidden overflow-x-scroll fixed  right-0 left-0 flex whitespace-nowrap px-6 py-4 top-14 z-10 bg-secondary transform transition-transform duration-300 translate-y-0 md:justify-center;
 }
 
 .link {
@@ -24,7 +24,7 @@
 }
 
 .listView {
-  @apply sticky flex flex-col px-6 pt-6 pb-8 top-14 z-50 bg-secondary border-b;
+  @apply fixed right-0 left-0 flex flex-col px-6 pt-6 pb-8 top-14 z-50 bg-secondary border-b -mt-2;
 }
 
 .listView::after {
@@ -33,11 +33,11 @@
 }
 
 .listView .link {
-  @apply py-2 my-1 px-4 mx-0;
+  @apply py-2 my-1 px-4 mx-0 text-primary-60;
 }
 
 .listView .active {
-  @apply bg-blue rounded-sm text-accent border-none;
+  @apply bg-blue-10 rounded-sm text-accent border-none;
 }
 
 .listView p {
