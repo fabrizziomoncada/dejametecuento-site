@@ -30,7 +30,7 @@
   }
   & figure {
     flex: 0.65;
-    @apply relative pt-2/5 xl:pb-1/3;
+    @apply relative pt-2/5;
   }
 }
 
