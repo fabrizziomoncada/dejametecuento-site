@@ -40,7 +40,7 @@ const ListsPage = () => {
             artículos guardados también están disponibles sin conexión."
           />
           <Button
-            className="bg-blue mt-6 mx-auto px-4 text-secondary"
+            className="bg-accent mt-6 mx-auto px-4 text-secondary"
             onClick={() => router.push('/')}
           >
             Regresar

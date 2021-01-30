@@ -3,7 +3,7 @@
 }
 
 .filterActive {
-  @apply bg-blue-10 text-blue rounded-sm relative;
+  @apply bg-blue-10 text-accent rounded-sm relative;
 }
 
 .filterActive:after {

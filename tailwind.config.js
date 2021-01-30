@@ -24,7 +24,7 @@ module.exports = {
       'black-a-30': 'var(--black-a-30)',
       accent: 'var(--accent)',
       blue: {
-        DEFAULT: 'var(--accent)',
+        DEFAULT: 'var(--blue)',
         light: 'var(--blue-light)',
         10: 'var(--blue-10)',
       },
