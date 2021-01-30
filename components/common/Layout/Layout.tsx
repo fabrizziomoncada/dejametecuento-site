@@ -4,6 +4,7 @@ import { Footer } from '../Footer'
 import { Header } from '../Header'
 import { Nav } from '../Nav'
 import OfflineBanner from '../OfflineBanner'
+import cn from 'classnames'
 
 type Props = {
   children: React.ReactNode
@@ -17,7 +18,12 @@ const Layout = ({ children, navigation, subheader }: Props) => {
       <Header subheader={subheader ? true : false} />
       {navigation && <Nav categories={navigation.categories} />}
 
-      <main className="min-h-screen px-6 pt-14 pb-20 flex flex-col mx-auto md:w-3/4 lg:w-2/3 xl:w-7/12">
+      <main
+        className={cn(
+          'min-h-screen px-6 pb-20 flex flex-col mx-auto md:w-3/4 lg:w-2/3 xl:w-7/12',
+          navigation ? 'pt-28' : 'pt-14'
+        )}
+      >
         {subheader}
         {children}
       </main>
