@@ -10,7 +10,7 @@ import { useIsMobile } from '@lib/hooks/use-media-queries'
 import ChevronUp from '@components/icons/ChevronUp'
 
 const Nav = ({ categories }: { categories: TCategory[] }) => {
-  const [isExpanded, setIsExpanded] = useState(true)
+  const [isExpanded, setIsExpanded] = useState(false)
   const router = useRouter()
   const { isHidden } = useHideOnScroll()
   const isMobile = useIsMobile()
@@ -24,7 +24,7 @@ const Nav = ({ categories }: { categories: TCategory[] }) => {
 
   return (
     <nav className={rootClassName}>
-      {isExpanded && <p>Todas las categorias</p>}
+      {isMobile && isExpanded && <p>Todas las categorias</p>}
 
       <Link href={`/`}>
         <a className={cn(s.link, { [s.active]: router.pathname === '/' })}>
