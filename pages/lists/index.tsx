@@ -20,6 +20,18 @@ const ListsPage = () => {
     getStoredArticles()
   }, [])
 
+  useEffect(() => {
+    const handleStorageChange = async () => {
+      const storedArticles = await getAllStoredContent()
+      setList(storedArticles)
+    }
+
+    window.addEventListener('indexed-list', handleStorageChange)
+    return () => {
+      window.removeEventListener('indexed-list', handleStorageChange)
+    }
+  }, [])
+
   return (
     <Layout subheader={<Subheader title="Listas de lecturas" />}>
       {list && list.length !== 0 ? (

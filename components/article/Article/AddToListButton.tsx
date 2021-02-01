@@ -34,6 +34,7 @@ const AddToListButton = ({ article, icon = 'default' }: Props) => {
   const removeFromList = async (article: TArticle) => {
     setList(list.filter((item: TArticle) => item.slug !== article.slug))
     addToast('Artículo eliminado')
+    window.dispatchEvent(new Event('indexed-list'))
     await removeContent(article)
   }
 
