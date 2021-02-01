@@ -9,12 +9,15 @@ import '@styles/base.css'
 import '@styles/components.css'
 import '@styles/utilities.css'
 import Head from '@components/common/head'
+import ToastProvider from '@components/ui/Toast/ToastProvider'
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
     <ThemeProvider>
-      <Head />
-      <Component {...pageProps} />
+      <ToastProvider>
+        <Head />
+        <Component {...pageProps} />
+      </ToastProvider>
     </ThemeProvider>
   )
 }
