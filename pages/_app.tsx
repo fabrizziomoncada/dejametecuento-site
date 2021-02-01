@@ -10,13 +10,16 @@ import '@styles/components.css'
 import '@styles/utilities.css'
 import Head from '@components/common/head'
 import ToastProvider from '@components/ui/Toast/ToastProvider'
+import ListProvider from '@components/common/ListProvider'
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
     <ThemeProvider>
       <ToastProvider>
-        <Head />
-        <Component {...pageProps} />
+        <ListProvider>
+          <Head />
+          <Component {...pageProps} />
+        </ListProvider>
       </ToastProvider>
     </ThemeProvider>
   )

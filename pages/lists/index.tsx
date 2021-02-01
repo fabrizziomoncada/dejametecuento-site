@@ -1,36 +1,14 @@
-import { useState, useEffect } from 'react'
-import { getAllStoredContent } from '@lib/storage'
 import { Button } from '@components/ui/Button'
 import { useRouter } from 'next/router'
 import { Layout } from '@components/common/Layout'
 import { Subheader } from '@components/common/Subheader'
 import EmptyList from '@components/common/EmptyList'
 import { ArticlesList } from '@components/article'
+import { useList } from '@lib/hooks/use-list'
 
 const ListsPage = () => {
-  const [list, setList] = useState<TArticle[]>([])
-
   const router = useRouter()
-
-  useEffect(() => {
-    const getStoredArticles = async () => {
-      const storedArticles = await getAllStoredContent()
-      setList(storedArticles)
-    }
-    getStoredArticles()
-  }, [])
-
-  useEffect(() => {
-    const handleStorageChange = async () => {
-      const storedArticles = await getAllStoredContent()
-      setList(storedArticles)
-    }
-
-    window.addEventListener('indexed-list', handleStorageChange)
-    return () => {
-      window.removeEventListener('indexed-list', handleStorageChange)
-    }
-  }, [])
+  const { list } = useList()
 
   return (
     <Layout subheader={<Subheader title="Listas de lecturas" />}>

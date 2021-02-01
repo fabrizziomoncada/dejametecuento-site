@@ -1,9 +1,7 @@
-import { useState, useEffect } from 'react'
-import { removeContent, storeContent, getAllStoredContent } from '@lib/storage'
 import Bookmark from '@components/icons/Bookmark'
 import { Button } from '@components/ui/Button'
 import Trash from '@components/icons/Trash'
-import { useToast } from '@lib/hooks/use-toast'
+import { useList } from '@lib/hooks/use-list'
 
 type Props = {
   article: TArticle
@@ -11,36 +9,16 @@ type Props = {
 }
 
 const AddToListButton = ({ article, icon = 'default' }: Props) => {
-  const [list, setList] = useState<TArticle[]>([])
-
-  const { addToast } = useToast()
-
-  useEffect(() => {
-    const getStoredArticles = async () => {
-      const storedArticles = await getAllStoredContent()
-      setList(storedArticles)
-    }
-    getStoredArticles()
-  }, [])
+  const { list, addToList, removeFromList } = useList()
 
   const isOnList = list.some((item: TArticle) => item.slug === article.slug)
 
-  const addToList = async (article: TArticle) => {
-    setList([...list, article])
-    addToast('Artículo guardado')
-    await storeContent(article)
-  }
-
-  const removeFromList = async (article: TArticle) => {
-    setList(list.filter((item: TArticle) => item.slug !== article.slug))
-    addToast('Artículo eliminado')
-    window.dispatchEvent(new Event('indexed-list'))
-    await removeContent(article)
-  }
-
   const onButtonClick = async () => {
-    if (!isOnList) return await addToList(article)
-    return await removeFromList(article)
+    if (!isOnList) {
+      addToList(article)
+    } else {
+      removeFromList(article)
+    }
   }
 
   return (
