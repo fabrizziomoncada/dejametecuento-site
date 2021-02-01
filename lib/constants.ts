@@ -5,18 +5,19 @@ export const TwitterURL = 'https://twitter.com'
 export const SITE_URL = 'https://dejametecuento.vercel.app'
 export const SITE_NAME = 'Déjame te Cuento'
 
-export const CONTACT_EMAIL = 'dejametecuent@gmail.com'
+export const CONTACT_EMAIL = 'dejametecuento@gmail.com'
 
 export const SOCIAL_USERNAMES = {
-  twitter: 'edgarlr_',
-  instagram: 'edgar.lr',
-  facebook: 'edgarlr',
+  twitter: 'CuentoDejame',
+  instagram: 'dejame.tecuentoblog',
+  facebook: 'dejame.tecuentoblog',
   youtube: null,
   linkedin: null,
 }
 
 // Default SEO
-export const SEO_DESCRIPTION = 'This is a magazine description'
+export const SEO_DESCRIPTION = `Bienvenidos a la revista digital que busca ser tu nueva fuente de información, aquí podrás encontrar artículos y ensayos sobre el mundo actual, historia, política, medio ambiente y más. 
+Información libre, información multidisciplinaria.`
 
 export const OG_IMAGE = {
   large: {
