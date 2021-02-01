@@ -3,6 +3,7 @@ import { removeContent, storeContent, getAllStoredContent } from '@lib/storage'
 import Bookmark from '@components/icons/Bookmark'
 import { Button } from '@components/ui/Button'
 import Trash from '@components/icons/Trash'
+import { useToast } from '@lib/hooks/use-toast'
 
 type Props = {
   article: TArticle
@@ -11,6 +12,8 @@ type Props = {
 
 const AddToListButton = ({ article, icon = 'default' }: Props) => {
   const [list, setList] = useState<TArticle[]>([])
+
+  const { addToast } = useToast()
 
   useEffect(() => {
     const getStoredArticles = async () => {
@@ -24,11 +27,13 @@ const AddToListButton = ({ article, icon = 'default' }: Props) => {
 
   const addToList = async (article: TArticle) => {
     setList([...list, article])
+    addToast('Artículo guardado')
     await storeContent(article)
   }
 
   const removeFromList = async (article: TArticle) => {
     setList(list.filter((item: TArticle) => item.slug !== article.slug))
+    addToast('Artículo eliminado')
     await removeContent(article)
   }
 
