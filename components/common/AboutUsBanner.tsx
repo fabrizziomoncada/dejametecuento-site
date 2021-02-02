@@ -1,6 +1,6 @@
 const AboutUsBanner = () => {
   return (
-    <div className="w-full text-center py-16 px-8 bg-primary md:p-24 lg:py-28 lg:px-64">
+    <div className="w-full text-center py-16 px-8 bg-primary md:p-24 lg:py-32 lg:px-64">
       <h5 className="text-secondary serif text-3xl mb-2">
         Acerca de Déjame te Cuento
       </h5>

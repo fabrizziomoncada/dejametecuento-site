@@ -18,16 +18,18 @@ function Home({
     <Layout navigation={navigation}>
       <ArticlesCarousel articles={articles} />
       <ArticlesList articles={articles} title="Entradas Recientes" />
-      <ArticlesList
-        articles={articles}
-        title="Articulos Principales"
-        variant="top"
-      />
-      <ArticlesList
-        articles={articles}
-        title="Artículos Más leidos"
-        variant="top"
-      />
+      <div className="lg:flex lg:gap-16">
+        <ArticlesList
+          articles={articles}
+          title="Articulos Principales"
+          variant="top"
+        />
+        <ArticlesList
+          articles={articles}
+          title="Artículos Más leidos"
+          variant="top"
+        />
+      </div>
       <ArticlesList
         articles={articles}
         title="Continúa Leyendo"
