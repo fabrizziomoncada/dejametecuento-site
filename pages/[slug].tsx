@@ -5,6 +5,8 @@ import { NextSeo } from 'next-seo'
 import { Layout } from '@components/common/Layout'
 import ArticlesHero from '@components/article/ArticlesHero/ArticlesHero'
 import { useMediaQuery } from '@lib/hooks/use-media-queries'
+import { useRouter } from 'next/router'
+import ErrorPage from './404'
 
 export async function getStaticPaths() {
   const categories: TCategory[] = await fetchAPI('/categories')
@@ -40,7 +42,11 @@ function CategoryPage({
   articles,
   navigation,
 }: InferGetStaticPropsType<typeof getStaticProps>) {
+  const { isFallback } = useRouter()
   const isTablet = useMediaQuery(1023)
+  if (!isFallback && (!articles || articles.length === 0)) {
+    return <ErrorPage />
+  }
   return (
     <>
       <NextSeo
@@ -71,7 +77,7 @@ function CategoryPage({
         )}
 
         <ArticlesList articles={articles} title="Entradas Recientes" />
-        <div className="lg:flex lg:gap-28">
+        <div className="lg:py-24 lg:flex lg:gap-32 lg:mx-auto">
           <ArticlesList
             articles={articles}
             title="Articulos Principales"

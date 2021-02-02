@@ -9,7 +9,7 @@ export default function custom404() {
         </a>
       </Link>
 
-      <div className="w-9/12 text-center block mt-1/3 mx-auto">
+      <div className="w-9/12 text-center block mt-1/3 mx-auto lg:mt-28">
         <h1 className="text-8xl my-8 text-blue-light">
           4<span className="text-blue opacity-80">0</span>4
         </h1>

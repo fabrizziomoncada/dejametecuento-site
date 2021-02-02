@@ -17,6 +17,7 @@ function Home({
   navigation,
 }: InferGetStaticPropsType<typeof getStaticProps>) {
   const isTablet = useMediaQuery(1023)
+
   return (
     <Layout navigation={navigation}>
       {isTablet ? (
@@ -27,7 +28,8 @@ function Home({
       )}
 
       <ArticlesList articles={articles} title="Entradas Recientes" />
-      <div className="lg:flex lg:gap-28">
+
+      <div className="lg:py-24 lg:flex lg:gap-28 lg:mx-auto">
         <ArticlesList
           articles={articles}
           title="Articulos Principales"
@@ -39,6 +41,7 @@ function Home({
           variant="top"
         />
       </div>
+
       <ArticlesList
         articles={articles}
         title="Continúa Leyendo"

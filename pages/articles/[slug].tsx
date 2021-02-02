@@ -1,13 +1,13 @@
 import { fetchAPI, getMediaURL } from '@lib/api'
 import { GetStaticPropsContext, InferGetStaticPropsType } from 'next'
 import { useRouter } from 'next/router'
-import ErrorPage from 'next/error'
 import { Article, ArticlesList } from '@components/article'
 import { NextSeo } from 'next-seo'
 import ExitPreviewButton from '@components/common/ExitPreviewButton'
 import { Layout } from '@components/common/Layout'
 import ArticleSubheader from '@components/common/Subheader/ArticleSubheader'
 import { SITE_URL } from '@lib/constants'
+import ErrorPage from '../404'
 
 export async function getStaticPaths() {
   // If you don't have too many articles you can uncomment this code and pre-build each page instead
@@ -51,7 +51,7 @@ function ArticlePage({
   const { isFallback } = useRouter()
 
   if (!isFallback && !article) {
-    return <ErrorPage statusCode={404} />
+    return <ErrorPage />
   }
 
   return (

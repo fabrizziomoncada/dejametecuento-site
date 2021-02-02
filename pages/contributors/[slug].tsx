@@ -2,7 +2,7 @@ import { ArticlesList } from '@components/article'
 import { fetchAPI, getMediaURL } from '@lib/api'
 import { GetStaticPropsContext, InferGetStaticPropsType } from 'next'
 import { useRouter } from 'next/router'
-import ErrorPage from 'next/error'
+import ErrorPage from '../404'
 import ExternalLink from '@components/ui/Link/ExternalLink'
 import Image from 'next/image'
 import { Layout } from '@components/common/Layout'
@@ -48,7 +48,7 @@ function ContributorPage({
   const { isFallback } = useRouter()
 
   if (!isFallback && !contributor) {
-    return <ErrorPage statusCode={404} />
+    return <ErrorPage />
   }
 
   // if featuared is diferent than undefined it will be true
