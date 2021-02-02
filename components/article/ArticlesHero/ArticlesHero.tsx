@@ -51,7 +51,7 @@ const ArticlesHero = ({ articles }: { articles: TArticle[] }) => {
               />
             </div>
           </section>
-          <ActionButtons article={articles[0]} className="-mb-4" />
+          <ActionButtons article={articles[0]} />
         </article>
       </div>
       <div className="flex-1">
