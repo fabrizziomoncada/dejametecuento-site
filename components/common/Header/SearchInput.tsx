@@ -22,7 +22,7 @@ const SearchInput = ({ handleOnClose }: { handleOnClose: () => void }) => {
           <Close />
         </Button>
       </div>
-      <label className="flex items-center border-b w-full py-2 px-3 focus-within:border-primary">
+      <label className="flex items-center border-b w-full py-2 px-3 focus-within:border-primary md:w-3/4 lg:w-2/3 xl:w-7/12">
         <input
           type="search"
           ref={searchInput}
