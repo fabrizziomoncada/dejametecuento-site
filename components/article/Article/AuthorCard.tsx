@@ -9,7 +9,7 @@ function AuthorCard({ author }: { author: TContributor }) {
   )
 
   return (
-    <div className="flex py-6 items-center">
+    <div className="flex py-6 items-center cursor-pointer">
       {author.featured && (
         <Link href={`/contributors/${author.slug}`}>
           <figure className="relative w-14 h-14 mr-5">
@@ -25,7 +25,7 @@ function AuthorCard({ author }: { author: TContributor }) {
 
       <div>
         <Link href={`/contributors/${author.slug}`}>
-          <a className="text-xl">{author.name}</a>
+          <a className="text-xl hover:underline">{author.name}</a>
         </Link>
 
         <AuthorSocialMedia urls={author.urls} />

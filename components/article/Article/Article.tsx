@@ -13,7 +13,7 @@ function Article({ article }: { article: TArticle | undefined }) {
     <article className="flex flex-col border-b mb-14 lg:w-9/12 lg:mx-auto">
       <header className="pt-4 mb-14 border-b">
         <Link href={`/${article.category.slug}`}>
-          <a className="uppercase text-sm font-bold px-2 py-1 text-accent border border-accent rounded-sm">
+          <a className="uppercase text-sm font-bold px-2 py-1 text-accent border border-accent rounded-sm hover:underline">
             {article.category.title}
           </a>
         </Link>
@@ -23,7 +23,7 @@ function Article({ article }: { article: TArticle | undefined }) {
         <p className="text-sm">
           Por{' '}
           <Link href={`/contributors/${article.author.slug}`}>
-            <a className="font-bold">{article.author.name}</a>
+            <a className="font-bold hover:underline">{article.author.name}</a>
           </Link>
         </p>
 
