@@ -63,7 +63,7 @@ const ArticleSubheader = ({ article }: Props) => {
   return (
     <div className={s.root}>
       <Link href="/">
-        <a className="justify-self-start" aria-label="Go back">
+        <a className="justify-self-start hover:opacity-50" aria-label="Go back">
           <ArrowLeft />
         </a>
       </Link>

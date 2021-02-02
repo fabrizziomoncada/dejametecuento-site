@@ -18,7 +18,7 @@
     }
 
     & a {
-      @apply underline;
+      @apply underline transition-opacity hover:opacity-50;
     }
 
     & img {

@@ -7,7 +7,7 @@ const Subheader = ({ title, to }: { title: string; to?: string }) => {
   return (
     <div className={cn(s.root, 'justify-center')}>
       <Link href={to ? to : '/'}>
-        <a className="absolute left-0" aria-label="Go back">
+        <a className="absolute left-0 hover:opacity-60" aria-label="Go back">
           <ArrowLeft />
         </a>
       </Link>
