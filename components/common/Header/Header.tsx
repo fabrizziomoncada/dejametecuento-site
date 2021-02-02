@@ -21,7 +21,7 @@ const Header = ({ subheader = false }) => {
       )}
     >
       <Link href="/lists">
-        <a className="p-2" aria-label="My Bookmars">
+        <a className="p-2 rounded-lg hover:opacity-50" aria-label="My Bookmars">
           <Bookmark />
         </a>
       </Link>
