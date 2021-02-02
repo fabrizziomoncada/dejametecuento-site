@@ -3,7 +3,7 @@ import { CONTACT_EMAIL } from '@lib//constants'
 
 const ContributionBanner = () => {
   return (
-    <div className="w-full text-center py-16">
+    <div className="w-full text-center py-16 md:py-24 lg:py-28">
       <h5 className="serif text-4xl mb-4">¿Quieres contribuir?</h5>
       <p className="py-1">Siéntete libre de contactarnos a:</p>
       <ExternalLink
