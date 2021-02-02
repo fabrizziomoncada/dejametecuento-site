@@ -13,61 +13,58 @@ const SocialUrls = () => {
   return (
     <ul className="flex py-4 justify-center">
       {twitter && (
-        <li className="px-2">
-          <ExternalLink
-            to={`https://twitter.com/${twitter}`}
-            ariaLabel="Twitter"
-          >
+        <ExternalLink to={`https://twitter.com/${twitter}`} ariaLabel="Twitter">
+          <li className="px-2">
             <Twitter />
-          </ExternalLink>
-        </li>
+          </li>
+        </ExternalLink>
       )}
       {instagram && (
-        <li className="px-2">
-          <ExternalLink
-            to={`https://instagram.com/${instagram}`}
-            ariaLabel="Instagram"
-          >
+        <ExternalLink
+          to={`https://instagram.com/${instagram}`}
+          ariaLabel="Instagram"
+        >
+          <li className="px-2">
             <Instagram />
-          </ExternalLink>
-        </li>
+          </li>
+        </ExternalLink>
       )}
       {facebook && (
-        <li className="px-2">
-          <ExternalLink
-            to={`https://facebook.com/${facebook}`}
-            ariaLabel="Facebook"
-          >
+        <ExternalLink
+          to={`https://facebook.com/${facebook}`}
+          ariaLabel="Facebook"
+        >
+          <li className="px-2">
             <Facebook />
-          </ExternalLink>
-        </li>
+          </li>
+        </ExternalLink>
       )}
       {CONTACT_EMAIL && (
-        <li className="px-2">
-          <ExternalLink to={`mailto:${CONTACT_EMAIL}`} ariaLabel="Send Email">
+        <ExternalLink to={`mailto:${CONTACT_EMAIL}`} ariaLabel="Send Email">
+          <li className="px-2">
             <Mail />
-          </ExternalLink>
-        </li>
+          </li>
+        </ExternalLink>
       )}
       {youtube && (
-        <li className="px-2">
-          <ExternalLink
-            to={`https://youtube.com/user/${youtube}`}
-            ariaLabel="Youtube"
-          >
+        <ExternalLink
+          to={`https://youtube.com/user/${youtube}`}
+          ariaLabel="Youtube"
+        >
+          <li className="px-2">
             <Youtube />
-          </ExternalLink>
-        </li>
+          </li>
+        </ExternalLink>
       )}
       {linkedin && (
-        <li className="px-2">
-          <ExternalLink
-            to={`https://linkedin.com/in/${linkedin}`}
-            ariaLabel="Linkedin"
-          >
+        <ExternalLink
+          to={`https://linkedin.com/in/${linkedin}`}
+          ariaLabel="Linkedin"
+        >
+          <li className="px-2">
             <Linkedin />
-          </ExternalLink>
-        </li>
+          </li>
+        </ExternalLink>
       )}
     </ul>
   )

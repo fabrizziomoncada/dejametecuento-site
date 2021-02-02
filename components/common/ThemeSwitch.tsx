@@ -21,7 +21,7 @@ const ThemeSwitch = () => {
       </span>
       {/* eslint-disable-next-line jsx-a11y/no-onchange */}
       <select
-        className="select-primary bg-secondary"
+        className="select-primary bg-secondary rounded-lg hover:bg-primary-05"
         id="theme"
         name="theme"
         value={theme}

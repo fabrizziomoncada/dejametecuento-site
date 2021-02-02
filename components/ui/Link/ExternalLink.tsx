@@ -1,4 +1,5 @@
 import { CSSProperties } from 'react'
+import cn from 'classnames'
 
 type Props = {
   children: React.ReactNode
@@ -25,7 +26,7 @@ function ExternalLink({
       rel={newTab ? 'noopener noreferrer' : ''}
       style={style}
       aria-label={ariaLabel}
-      className={className}
+      className={cn('hover:opacity-50', className)}
     >
       {children}
     </a>
