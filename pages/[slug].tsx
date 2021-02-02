@@ -3,6 +3,8 @@ import { GetStaticPropsContext, InferGetStaticPropsType } from 'next'
 import { fetchAPI, getMediaURL, getNavigation } from '@lib/api'
 import { NextSeo } from 'next-seo'
 import { Layout } from '@components/common/Layout'
+import ArticlesHero from '@components/article/ArticlesHero/ArticlesHero'
+import { useIsMobile } from '@lib/hooks/use-media-queries'
 
 export async function getStaticPaths() {
   const categories: TCategory[] = await fetchAPI('/categories')
@@ -38,8 +40,9 @@ function CategoryPage({
   articles,
   navigation,
 }: InferGetStaticPropsType<typeof getStaticProps>) {
+  const isMobile = useIsMobile()
   return (
-    <Layout navigation={navigation}>
+    <>
       <NextSeo
         title={category.title}
         description={category.description}
@@ -59,9 +62,34 @@ function CategoryPage({
           }),
         }}
       />
-      <ArticlesCarousel articles={articles} />
-      <ArticlesList articles={articles} title="Articles" />
-    </Layout>
+
+      <Layout navigation={navigation}>
+        {isMobile ? (
+          <ArticlesCarousel articles={articles} />
+        ) : (
+          <ArticlesHero articles={articles} />
+        )}
+
+        <ArticlesList articles={articles} title="Entradas Recientes" />
+        <div className="lg:flex lg:gap-28">
+          <ArticlesList
+            articles={articles}
+            title="Articulos Principales"
+            variant="top"
+          />
+          <ArticlesList
+            articles={articles}
+            title="Artículos Más leidos"
+            variant="top"
+          />
+        </div>
+        <ArticlesList
+          articles={articles}
+          title="Continúa Leyendo"
+          variant="compact"
+        />
+      </Layout>
+    </>
   )
 }
 
