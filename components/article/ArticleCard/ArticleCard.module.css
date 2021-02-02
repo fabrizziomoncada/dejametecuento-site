@@ -8,6 +8,16 @@
   }
 }
 
+.hero {
+  @apply relative cursor-pointer;
+  & figure {
+    @apply relative pb-3/5 w-full;
+  }
+  & ul {
+    @apply absolute bottom-0 right-0 pb-3 flex;
+  }
+}
+
 .carousel {
   @apply items-center justify-between relative min-w-full cursor-pointer;
   scroll-snap-align: start;

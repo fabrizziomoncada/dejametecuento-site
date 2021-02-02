@@ -2,6 +2,8 @@ import { InferGetStaticPropsType } from 'next'
 import { ArticlesCarousel, ArticlesList } from '@components/article'
 import { fetchAPI, getNavigation } from '@lib/api'
 import { Layout } from '@components/common/Layout'
+import { useIsMobile } from '@lib/hooks/use-media-queries'
+import ArticlesHero from '@components/article/ArticlesHero/ArticlesHero'
 
 export async function getStaticProps() {
   const articles: TArticle[] = await fetchAPI('/articles')
@@ -14,11 +16,17 @@ function Home({
   articles,
   navigation,
 }: InferGetStaticPropsType<typeof getStaticProps>) {
+  const isMobile = useIsMobile()
   return (
     <Layout navigation={navigation}>
-      <ArticlesCarousel articles={articles} />
+      {isMobile ? (
+        <ArticlesCarousel articles={articles} />
+      ) : (
+        <ArticlesHero articles={articles} />
+      )}
+
       <ArticlesList articles={articles} title="Entradas Recientes" />
-      <div className="lg:flex lg:gap-16">
+      <div className="lg:flex lg:gap-28">
         <ArticlesList
           articles={articles}
           title="Articulos Principales"
