@@ -10,7 +10,7 @@ function Article({ article }: { article: TArticle | undefined }) {
   if (!article) return <p>Something went wrong</p>
 
   return (
-    <article className="flex flex-col border-b mb-14 lg:w-9/12 mx-auto">
+    <article className="flex flex-col border-b mb-14 lg:w-9/12 lg:mx-auto">
       <header className="pt-4 mb-14 border-b">
         <Link href={`/${article.category.slug}`}>
           <a className="uppercase text-sm font-bold px-2 py-1 text-accent border border-accent rounded-sm">
