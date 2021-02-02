@@ -1,5 +1,5 @@
 .default {
-  @apply py-6 border-b relative;
+  @apply py-6 border-b relative cursor-pointer;
   & figure {
     @apply relative pb-3/5 w-full xl:pb-2/5;
   }
@@ -9,7 +9,7 @@
 }
 
 .carousel {
-  @apply items-center justify-between relative min-w-full;
+  @apply items-center justify-between relative min-w-full cursor-pointer;
   scroll-snap-align: start;
   & figure {
     @apply relative pb-3/5 w-full xl:pb-2/5;
@@ -24,7 +24,7 @@
 }
 
 .compact {
-  @apply py-6;
+  @apply py-6 cursor-pointer;
   & .main {
     @apply flex items-center justify-between relative;
   }
@@ -35,7 +35,7 @@
 }
 
 .top {
-  @apply flex py-6 items-center justify-between relative min-w-full;
+  @apply flex py-6 items-center justify-between relative min-w-full cursor-pointer;
   & section {
     flex: 1;
   }
