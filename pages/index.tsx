@@ -2,7 +2,7 @@ import { InferGetStaticPropsType } from 'next'
 import { ArticlesCarousel, ArticlesList } from '@components/article'
 import { fetchAPI, getNavigation } from '@lib/api'
 import { Layout } from '@components/common/Layout'
-import { useIsMobile } from '@lib/hooks/use-media-queries'
+import { useMediaQuery } from '@lib/hooks/use-media-queries'
 import ArticlesHero from '@components/article/ArticlesHero/ArticlesHero'
 
 export async function getStaticProps() {
@@ -16,10 +16,11 @@ function Home({
   articles,
   navigation,
 }: InferGetStaticPropsType<typeof getStaticProps>) {
-  const isMobile = useIsMobile()
+  const isTablet = useMediaQuery(1023)
   return (
     <Layout navigation={navigation}>
-      {isMobile ? (
+      {isTablet ? (
+        // tablet and smaller devices
         <ArticlesCarousel articles={articles} />
       ) : (
         <ArticlesHero articles={articles} />

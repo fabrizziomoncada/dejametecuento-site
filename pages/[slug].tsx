@@ -4,7 +4,7 @@ import { fetchAPI, getMediaURL, getNavigation } from '@lib/api'
 import { NextSeo } from 'next-seo'
 import { Layout } from '@components/common/Layout'
 import ArticlesHero from '@components/article/ArticlesHero/ArticlesHero'
-import { useIsMobile } from '@lib/hooks/use-media-queries'
+import { useMediaQuery } from '@lib/hooks/use-media-queries'
 
 export async function getStaticPaths() {
   const categories: TCategory[] = await fetchAPI('/categories')
@@ -40,7 +40,7 @@ function CategoryPage({
   articles,
   navigation,
 }: InferGetStaticPropsType<typeof getStaticProps>) {
-  const isMobile = useIsMobile()
+  const isTablet = useMediaQuery(1023)
   return (
     <>
       <NextSeo
@@ -64,7 +64,7 @@ function CategoryPage({
       />
 
       <Layout navigation={navigation}>
-        {isMobile ? (
+        {isTablet ? (
           <ArticlesCarousel articles={articles} />
         ) : (
           <ArticlesHero articles={articles} />
