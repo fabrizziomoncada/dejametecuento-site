@@ -8,17 +8,22 @@ export default async function pagePreview(
   }>
 ) {
   // This secret should only be known to this API route and the CMS
-  if (req.query.secret !== process.env.PREVIEW_SECRET || !req.query.slug)
-    res.status(401).json({ message: 'Invalid token' })
+  if (req.query.secret !== process.env.PREVIEW_SECRET || !req.query.id) {
+    return res.status(401).json({ message: 'Invalid token' })
+  }
 
-  // Fetch the headless CMS to check if the provided `slug` exists
+  // This will work only on development, set the env variable on development
+  // or simple test with plan text variables e.g.
+  // if (req.query.secret !== 'SECRET' || !req.query.id)
+
+  // Fetch the headless CMS to check if the provided `id` exists
   const page: TPage = (
-    await fetchAPI(`/pages?slug=${req.query.slug}&_publicationState=preview`)
+    await fetchAPI(`/pages?id=${req.query.id}&_publicationState=preview`)
   )[0]
 
   // If the slug doesn't exist prevent preview mode from being enabled
   if (!page) {
-    return res.status(401).json({ message: 'Invalid slug' })
+    return res.status(401).json({ message: 'Invalid id' })
   }
 
   // Enable Preview Mode by setting the cookies
@@ -28,6 +33,6 @@ export default async function pagePreview(
 
   // Redirect to the path from the fetched post
   // We don't redirect to req.query.slug as that might lead to open redirect vulnerabilities
-  res.writeHead(307, { Location: `/pages/${page.slug}` })
+  res.redirect(`/pages/${page.slug}`)
   res.end()
 }
