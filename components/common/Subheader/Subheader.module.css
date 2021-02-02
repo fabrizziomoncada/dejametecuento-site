@@ -7,7 +7,7 @@
 }
 
 .articleTitle {
-  @apply text-lg overflow-hidden overflow-ellipsis whitespace-nowrap w-9/12 ml-6 transform translate-y-1 transition-all opacity-0;
+  @apply text-lg overflow-hidden -mb-0.5 overflow-ellipsis whitespace-nowrap w-9/12 ml-6 transform translate-y-1 transition-all opacity-0;
 }
 
 .show {
