@@ -22,7 +22,7 @@ export function ContributorsPage({
 
   return (
     <Layout subheader={<Subheader title="Contribuidores" />}>
-      <ul className="mb-4 flex flex-wrap">
+      <ul className="mb-4 flex flex-wrap lg:w-9/12 lg:mx-auto">
         {featured.map((contributor) => (
           <ContributorFeatured
             contributor={contributor}
@@ -30,10 +30,10 @@ export function ContributorsPage({
           />
         ))}
       </ul>
-      <h6 className="pt-6 pb-2 capitalize text-center">
+      <h6 className="pt-6 pb-2 capitalize text-center lg:w-9/12 lg:mx-auto lg:mt-14">
         Más miembros del equipo
       </h6>
-      <ul>
+      <ul className="lg:w-9/12 lg:mx-auto">
         {others.map((contributor) => (
           <Contributor contributor={contributor} key={contributor.slug} />
         ))}

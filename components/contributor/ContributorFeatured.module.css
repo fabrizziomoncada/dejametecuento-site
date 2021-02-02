@@ -1,5 +1,5 @@
 .root {
-  @apply py-6 w-6/12 flex flex-col items-center mx-auto border-b border-dashed;
+  @apply py-6 w-6/12 flex flex-col items-center mx-auto border-b border-dashed cursor-pointer;
 }
 
 .root:nth-child(2n + 1):nth-last-child(2n-1) {

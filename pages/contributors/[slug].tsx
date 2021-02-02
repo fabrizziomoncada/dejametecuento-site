@@ -60,7 +60,7 @@ function ContributorPage({
 
   return (
     <Layout subheader={<Subheader title="Contribuidores" to="/contributors" />}>
-      <section className="text-center py-10 border-b border-dashed">
+      <section className="text-center py-10 border-b border-dashed lg:w-9/12 lg:mx-auto">
         {isFeatured && (
           <figure className="relative w-28 h-28 mx-auto mb-4">
             <Image
@@ -91,11 +91,18 @@ function ContributorPage({
         </p> */}
       </section>
       {isFeatured && (
-        <p className="text-left border-b py-12 leading-tight">
+        <p className="text-left border-b py-12 leading-tight lg:w-9/12 lg:mx-auto">
           {contributor?.featured?.description}
         </p>
       )}
-      <ArticlesList articles={articles || []} title="Contribuciones" />
+      <ArticlesList
+        articles={articles || []}
+        title={
+          articles?.length === 1
+            ? `${articles?.length} Contribución`
+            : `${articles?.length} Contribuciones`
+        }
+      />
     </Layout>
   )
 }
