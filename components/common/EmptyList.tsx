@@ -8,7 +8,7 @@ const EmptyList = ({
   description: string
 }) => {
   return (
-    <div className="flex flex-col items-center mt-1/5 text-primary-60">
+    <div className="flex flex-col items-center mt-1/5 mx-auto text-primary-60 mb-2 lg:mt-10 lg:w-3/5">
       <div className="w-2/3 pb-1/3 mb-2 rounded-sm bg-accent opacity-60" />
       <div className="w-2/4 pb-4 mb-2 rounded-sm bg-accent opacity-40" />
       <div className="w-2/5 pb-4 mb-6 rounded-sm bg-accent opacity-20" />
