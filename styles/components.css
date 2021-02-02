@@ -58,7 +58,7 @@
       height: 2.5rem;
       line-height: 1;
       padding-right: 1rem;
-      background: white;
+      background: var(--secondary);
       content: '"';
       top: 0;
       left: 0;
@@ -74,7 +74,7 @@
       height: 2.5rem;
       padding-right: 1rem;
       line-height: 1;
-      background: white;
+      background: var(--secondary);
       transform: translateY(50%) rotate(180deg);
     }
 

@@ -16,7 +16,7 @@
 }
 
 .active {
-  @apply border-b-2 text-primary-95;
+  @apply border-b-2 border-primary text-primary-95;
 }
 
 .hide {
@@ -47,7 +47,7 @@
 }
 
 .button {
-  @apply sticky -right-2 bg-secondary z-10 hover:opacity-100 -my-2;
+  @apply sticky -right-2 bg-secondary ml-auto z-10 hover:opacity-100 -my-2;
 }
 
 .button::after {
