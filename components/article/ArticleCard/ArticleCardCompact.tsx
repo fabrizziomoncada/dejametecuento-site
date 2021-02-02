@@ -17,7 +17,7 @@ const ArticleCardCompact = ({ article }: Props) => {
           <h3
             className={cn(
               s.title,
-              'serif flex-1 pr-6 leading-tight overflow-hidden max-h-28'
+              'serif flex-1 pr-6 leading-tight overflow-hidden max-h-28 hover:underline'
             )}
           >
             {article.title}
@@ -39,12 +39,16 @@ const ArticleCardCompact = ({ article }: Props) => {
         <p>
           By
           <Link href={`/contributors/${article.author.slug}`}>
-            <span className="pl-1 font-bold">{article.author.name}</span>
+            <span className="pl-1 font-bold hover:underline">
+              {article.author.name}
+            </span>
           </Link>
         </p>
         <span className="mx-3">|</span>
         <Link href={`/${article.category.slug}`}>
-          <span className="text-accent">{article.category.title}</span>
+          <span className="text-accent hover:underline">
+            {article.category.title}
+          </span>
         </Link>
         <span className="mx-3">|</span>
         <Date date={article.published_at as string} />

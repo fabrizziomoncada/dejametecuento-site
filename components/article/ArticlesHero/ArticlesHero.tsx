@@ -25,7 +25,7 @@ const ArticlesHero = ({ articles }: { articles: TArticle[] }) => {
 
           <section className="pt-8">
             <Link href={`/${articles[0].category.slug}`}>
-              <a className="uppercase text-sm font-bold px-2 py-1 text-accent border border-accent rounded-sm">
+              <a className="uppercase text-sm font-bold px-2 py-1 text-accent border border-accent rounded-sm hover:underline">
                 {articles[0].category.title}
               </a>
             </Link>
@@ -33,7 +33,7 @@ const ArticlesHero = ({ articles }: { articles: TArticle[] }) => {
               <h3
                 className={cn(
                   s.title,
-                  'serif leading-tight overflow-hidden max-h-28 mt-4 mb-2'
+                  'serif leading-tight overflow-hidden max-h-28 mt-4 mb-2 hover:underline'
                 )}
               >
                 {articles[0].title}
@@ -42,7 +42,9 @@ const ArticlesHero = ({ articles }: { articles: TArticle[] }) => {
             <div className="flex text-sm">
               By
               <Link href={`/contributors/${articles[0].author.slug}`}>
-                <p className="pl-1 pr-2 font-bold">{articles[0].author.name}</p>
+                <p className="pl-1 pr-2 font-bold hover:underline">
+                  {articles[0].author.name}
+                </p>
               </Link>
               {' | '}
               <Date

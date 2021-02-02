@@ -21,7 +21,7 @@ const ArticleCard = ({ article }: { article: TArticle }) => {
 
       <section className="pt-8">
         <Link href={`/${article.category.slug}`}>
-          <a className="uppercase text-sm font-bold px-2 py-1 text-accent border border-accent rounded-sm">
+          <a className="uppercase text-sm font-bold px-2 py-1 text-accent border border-accent rounded-sm hover:underline">
             {article.category.title}
           </a>
         </Link>
@@ -38,7 +38,9 @@ const ArticleCard = ({ article }: { article: TArticle }) => {
         <div className="flex text-sm">
           By
           <Link href={`/contributors/${article.author.slug}`}>
-            <p className="pl-1 pr-2 font-bold">{article.author.name}</p>
+            <p className="pl-1 pr-2 font-bold hover:underline">
+              {article.author.name}
+            </p>
           </Link>
           {' | '}
           <Date className="px-2" date={article.published_at as string} />
