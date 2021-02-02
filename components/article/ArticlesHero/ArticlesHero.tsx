@@ -9,8 +9,8 @@ import ActionButtons from '../Article/ActionButtons'
 
 const ArticlesHero = ({ articles }: { articles: TArticle[] }) => {
   return (
-    <section className="mb-4 flex gap-20 py-16 border-b">
-      <div style={{ flex: 0.9 }}>
+    <section className="mb-4 flex justify-between items-center py-16 border-b">
+      <div style={{ width: '45%' }}>
         <article className={s.hero}>
           <Link href={`/articles/${articles[0].slug}`}>
             <figure>
@@ -54,7 +54,8 @@ const ArticlesHero = ({ articles }: { articles: TArticle[] }) => {
           <ActionButtons article={articles[0]} />
         </article>
       </div>
-      <div className="flex-1">
+
+      <div style={{ width: '45%' }}>
         {articles.slice(0, 4).map((article, index) => (
           <ArticleCardTop
             article={article}

@@ -20,7 +20,7 @@ const Layout = ({ children, navigation, subheader }: Props) => {
 
       <main
         className={cn(
-          'min-h-screen px-6 pb-20 flex flex-col mx-auto md:w-3/4 lg:w-2/3 lg:px-0 xl:w-7/12',
+          'min-h-screen px-6 pb-20 flex flex-col mx-auto md:w-3/4 lg:w-2/3 lg:px-0 xl:w-8/12',
           navigation ? 'pt-28' : 'pt-14'
         )}
       >
