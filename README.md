@@ -54,4 +54,4 @@ We really appreciate any contribution.
 
 ## License
 
-[MIT License](https://github.com/dejametecuento/dejametecuento-api/blob/main/LICENSE).
+[MIT License](https://github.com/dejametecuento/dejametecuento-site/blob/main/LICENSE).
