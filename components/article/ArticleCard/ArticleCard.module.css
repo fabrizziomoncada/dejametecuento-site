@@ -23,7 +23,7 @@
 }
 
 .hero {
-  @apply relative cursor-pointer;
+  @apply relative cursor-pointer transition-transform transform scale-100;
   & figure {
     @apply relative pb-3/5 w-full;
   }
@@ -67,6 +67,32 @@
     flex: 0.125;
     @apply text-2xl font-bold text-primary-20;
   }
+}
+
+.default,
+.top,
+.compact {
+  transition-property: transform opacity;
+  transition-timing-function: linear;
+  transition-duration: 0.085s;
+  @apply transition-transform transform scale-100;
+}
+
+.default:hover,
+.top:hover {
+  transform: scale(1.015);
+  opacity: 0.5;
+}
+
+.hero {
+  transition-property: transform;
+  transition-timing-function: linear;
+  transition-duration: 0.1s;
+}
+
+.hero:hover,
+.compact:hover {
+  transform: scale(1.01);
 }
 
 .title {
