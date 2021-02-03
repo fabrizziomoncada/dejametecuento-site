@@ -10,6 +10,11 @@ Déjame te cuento website frontend
   - [TypeScript](https://nextjs.org/docs/basic-features/typescript)
 - CMS: [Strapi CMS](https://strapi.io/documentation)
 
+### Design
+
+- [Figma File](https://www.figma.com/community/file/930872073422001170) by [@cfmr](https://www.figma.com/@cfmr)
+
+
 ## Running Locally
 
 You need to set up strapi first to populate the content
